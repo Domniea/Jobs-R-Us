@@ -9,6 +9,7 @@ import StaffRoute from './components/protectedRoutes/StaffRoute'
 import UserList from './components/UserList'
 import CreateUser from './components/CreateUser'
 import NotFound from './components/NotFound'
+import StaffProfile from './components/staff/StaffProfile'
 import StaffSearch from './components/addStaff/StaffSearch'
 import JobView from './components/allJobsView/JobView'
 import CompletedView from './components/CompletedView'
@@ -39,7 +40,10 @@ function App() {
         <Route path='/completed' element={<ProtectedRoute token={token} redirectTo={<Auth/>}>
           <CompletedView />
         </ProtectedRoute>}/>
-        <Route path='/addstaff' element={<StaffRoute token={token} isStaff={isStaff} redirectTo={<Profile/>}>
+        <Route path='/staff/profile' element={<StaffRoute token={token} isStaff={isStaff} redirectTo={<Profile/>}>
+          <StaffProfile/>
+        </StaffRoute>}/>
+        <Route path='/management/addstaff' element={<StaffRoute token={token} isStaff={isStaff} redirectTo={<Profile/>}>
           <StaffSearch/>
         </StaffRoute>}/>
         <Route path='*' element={<NotFound/>}/>

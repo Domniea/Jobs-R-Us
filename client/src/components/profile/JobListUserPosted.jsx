@@ -7,7 +7,8 @@ function JobListUserPosted(props) {
 
     const {
         usersJobsPosted,
-        getUsersJobsPosted
+        getUsersJobsPosted,
+        deleteJob
     } = useContext(JobContext)
 
     const {
@@ -24,6 +25,7 @@ function JobListUserPosted(props) {
         return <JobUserPost
             key={j._id}
             {...j}
+            deleteJob={deleteJob}
         />
     })
 

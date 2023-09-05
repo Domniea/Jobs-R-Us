@@ -9,7 +9,8 @@ function Navbar() {
         user: {
             isSuper,
             isManager,
-            isStaff
+            isStaff,
+            
         }
     } = useContext(UserContext)
     
@@ -31,7 +32,7 @@ function Navbar() {
           
                 </Link>
                 <Link to='/jobsmain'>Jobs</Link>
-                { isManager  && <Link to='/addStaff'>Add Staff</Link> }
+                { isManager  && <Link to='/management/addStaff'>Add Staff</Link> }
                 <button onClick={() => logout()}>Logout</button>
             </nav>
         </div>

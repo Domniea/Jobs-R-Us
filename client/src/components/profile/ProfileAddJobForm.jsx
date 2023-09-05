@@ -12,7 +12,8 @@ function JobForm(props) {
 // } = useContext(UserContext)
 
 const {
-    postJob
+    postJob,
+    getUsersJobsPosted
 } = useContext(JobContext)
 
 const {
@@ -38,6 +39,7 @@ function handleChange(e) {
 function handleSubmit(e) {
     e.preventDefault()
     postJob(inputs, userId)   
+    getUsersJobsPosted(userId)
 }
 
     return(

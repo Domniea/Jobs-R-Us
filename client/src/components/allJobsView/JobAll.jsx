@@ -1,14 +1,20 @@
 import React, { useContext, useState } from "react";
 import { JobContext } from "../../context/JobProvider";
+import { UserContext } from "../../context/userProvider";
 
 
 function Job(props) {
-    const { job, 
+    const { 
+        job, 
         price, 
         location, 
         isPending, 
         _id } = props
 
+    // const {
+    //     user
+    // } = useContext(UserContext)
+    // console.log(_id)
     const {
         acceptJob
     } = useContext(JobContext)
@@ -27,7 +33,8 @@ function Job(props) {
                 staff &&
                     <button
                         onClick={
-                            () => acceptJob({isPending: !isPending}, _id)
+                            // () => acceptJob({isPending: !isPending}, _id)
+                            () => acceptJob(user, _id)
                         }
                         // disabled={isPending}
                         >

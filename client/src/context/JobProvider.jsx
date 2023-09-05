@@ -57,15 +57,33 @@ function JobProvider(props) {
         userAxios.post(`/api/api/jobs/${userId}`, credentials)
             .then(res => {
                 console.log(res.data)
+                setUsersJobsPosted(prevState => {
+                    return [
+                        ...prevState, 
+                        res.data
+                    ]
+                })
             })
             .catch(err => {
                 console.log(err.response.data.errMsg)
             })
     }
 
+    //Delete Job
+    function deleteJob(jobId) {
+        userAxios.delete(`/api/api/jobs/${jobId}`)
+            .then(res => {
+                console.log(res.data)
+                setUsersJobsPosted(prevState => {
+                    return prevState.filter(job => job._id !== jobId)
+                })
+            })
+            .catch(err => console.log(err))
+    }
+
     //Accept Job Offer and toggle 'isPending'
-    function acceptJob(credentials, jobId ) {
-        userAxios.put(`/api/api/jobs/${jobId}`, credentials)
+    function acceptJob(user, jobId) {
+        userAxios.put(`/api/api/jobs/${jobId}`, {workedOnBy: user})
             .then(res => {
                 console.log(res)
                 getAllJobs()
@@ -90,6 +108,7 @@ function JobProvider(props) {
                 getUsersJobsPosted,
                 getUsersJobsCompleted,
                 postJob,
+                deleteJob,
                 acceptJob,
                 pendingJobs
             }}

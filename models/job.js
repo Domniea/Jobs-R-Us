@@ -19,9 +19,17 @@ const jobSchema = new Schema({
         type: Boolean,
         default: false
     },
+    workedOnBy: {
+      type:Schema.Types.ObjectId,
+      ref: 'User'  
+    },
     isComplete: {
         type: Boolean,
         default: false
+    },
+    completedBy: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     },
     user: {
         type: Schema.Types.ObjectId,
