@@ -1,7 +1,7 @@
 const express = require('express')
 const staffRouter = express.Router()
 const User = require('../models/user')
-const Job = require('../models/job')
+const Job = require('../models/Job')
 
 //Get all Users
 staffRouter.get('/', (req, res, next) => {
@@ -52,16 +52,32 @@ staffRouter.get(`/search/`, (req, res, next) => {
     )
 })
 
-//Get Employees Accepted Jobs
-staffRouter.get('/:userId', (req, res, next) => {
+//Get Employees Claimed Jobs
+staffRouter.get('/:userId/claimed', (req, res, next) => {
     Job.find(
-        {workedOnBy: req.body.userId},
+        {isPending: true, workedOnBy: req.params.userId},
         (err, pendingJobs) => {
             if(err) {
                 res.status(500)
                 return next(err)
             }
             return res.status(200).send(pendingJobs)
+        }
+    )
+})
+
+//Cancel Job
+staffRouter.put('/:jobId/cancel', (req, res, next) => {
+    Job.findOneAndUpdate(
+        {_id: req.params.jobId},
+        {isPending: false, workedOnBy: '000000000000000000000000'},
+        {new: true},
+        (err, user) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(user)
         }
     )
 })

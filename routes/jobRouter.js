@@ -5,6 +5,7 @@ const Job = require('../models/Job')
 //Find all Jobs
 jobRouter.get('/', (req, res, next) => {
     Job.find(
+        {isPending: false},
         (err, allJobs) => {
             if(err) {
                 res.status(500)
@@ -72,6 +73,7 @@ jobRouter.delete(`/:jobId`, (req, res, next) => {
 
 //Accept Job
 jobRouter.put('/:jobId', (req, res, next) => {
+    // const { isPending } = req.body
     Job.findOneAndUpdate(
         { _id: req.params.jobId },
         req.body,

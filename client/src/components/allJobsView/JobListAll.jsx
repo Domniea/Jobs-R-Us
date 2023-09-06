@@ -11,18 +11,24 @@ function JobList(props) {
         getAllJobs
     } = useContext(JobContext)
 
-    const { purpose } = props
+    const {
+        user: {
+            _id
+        }
+    
+    } = useContext(UserContext)
 
     useEffect(() => {
         getAllJobs()
     }, [])
 
 
-
     const job = allJobs.map(j => {
         return <JobAll
         key={j._id}
         {...j}
+        userId={_id}
+
         />
     })
 

@@ -61,7 +61,13 @@ function UserProvider(props) {
                 user,
                 token
             }))
-            navigate('/profile')
+            if(user.isStaff) {
+                console.log('staff')
+                navigate('/staff/profile')
+            } else {
+                navigate('/profile')   
+            }
+
         })
         .catch(err => errMsg(err.response.data.errMsg))
     }

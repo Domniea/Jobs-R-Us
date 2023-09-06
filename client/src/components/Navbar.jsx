@@ -21,7 +21,7 @@ function Navbar() {
     return (
         <div className="Navbar">
             <nav>
-                <Link to='/profile'>
+                <Link to={isStaff ? '/staff/profile' : '/profile'}>
                     Profile
                   {
                     pendingJobs.length > 0 &&
@@ -31,6 +31,7 @@ function Navbar() {
                   }
           
                 </Link>
+                { isStaff && <Link to='/profile'>Post</Link> }
                 <Link to='/jobsmain'>Jobs</Link>
                 { isManager  && <Link to='/management/addStaff'>Add Staff</Link> }
                 <button onClick={() => logout()}>Logout</button>

@@ -9,20 +9,20 @@ function Job(props) {
         price, 
         location, 
         isPending, 
-        _id } = props
+        _id,
+        userId
+    } = props
 
-    // const {
-    //     user
-    // } = useContext(UserContext)
-    // console.log(_id)
+
+   
     const {
         acceptJob
     } = useContext(JobContext)
-    
+
+
     const user = JSON.parse(localStorage.getItem('user'))
     const staff = user.isStaff
-    const userid = user._id 
-    
+  
 
     return (
         <div className="Job job" disabled={isPending} >
@@ -33,8 +33,8 @@ function Job(props) {
                 staff &&
                     <button
                         onClick={
+                            () => acceptJob(userId, _id, isPending)
                             // () => acceptJob({isPending: !isPending}, _id)
-                            () => acceptJob(user, _id)
                         }
                         // disabled={isPending}
                         >

@@ -34,15 +34,15 @@ function App() {
         <Route path='/profile' element={<ProtectedRoute token={token} redirectTo={<Auth/>}>
           <Profile/>
         </ProtectedRoute>}/>
+        <Route path='/staff/profile' element={<StaffRoute token={token} isStaff={isStaff} redirectTo={<JobView/>}>
+          <StaffProfile/>
+        </StaffRoute>}/>
         <Route path='/jobsmain' element={<ProtectedRoute token={token} redirectTo={<Auth/>}>
           <JobView />
         </ProtectedRoute>}/>
         <Route path='/completed' element={<ProtectedRoute token={token} redirectTo={<Auth/>}>
           <CompletedView />
         </ProtectedRoute>}/>
-        <Route path='/staff/profile' element={<StaffRoute token={token} isStaff={isStaff} redirectTo={<Profile/>}>
-          <StaffProfile/>
-        </StaffRoute>}/>
         <Route path='/management/addstaff' element={<StaffRoute token={token} isStaff={isStaff} redirectTo={<Profile/>}>
           <StaffSearch/>
         </StaffRoute>}/>

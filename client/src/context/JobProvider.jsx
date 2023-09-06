@@ -82,8 +82,8 @@ function JobProvider(props) {
     }
 
     //Accept Job Offer and toggle 'isPending'
-    function acceptJob(user, jobId) {
-        userAxios.put(`/api/api/jobs/${jobId}`, {workedOnBy: user})
+    function acceptJob(user, jobId, isPending) {
+        userAxios.put(`/api/api/jobs/${jobId}`, {workedOnBy: user, isPending: !isPending})
             .then(res => {
                 console.log(res)
                 getAllJobs()

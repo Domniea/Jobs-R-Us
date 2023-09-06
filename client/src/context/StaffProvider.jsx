@@ -14,6 +14,7 @@ const StaffContext = createContext()
 function StaffProvider(props) {
 
     const [userList, setUserList] = useState([])
+    const [claimedJobs, setClaimedJobs] = useState([])
 
 
     //Get All Users
@@ -47,6 +48,32 @@ function StaffProvider(props) {
             .catch(err => console.log(err))
     }
 
+    
+    //Get All Employees Claimed Jobs
+    function getClaimed(userId) {
+        userAxios.get(`/api/api/staff/${userId}/claimed`)
+            .then(res => {
+                // console.log(res)
+                setClaimedJobs(res.data)
+            })
+            .catch(err => console.log(err))
+    }
+
+    //Cancel Job
+    function cancelJob(jobId) {
+        userAxios.put(`/api/api/staff/${jobId}/cancel`)
+            .then(res => {
+
+                setClaimedJobs(prevState => {
+                    return  prevState.filter(job => job._id !== jobId)
+                }
+            )
+
+            })
+            .catch(err => console.log(err))
+    }
+
+    // console.log(claimedJobs)
 
     return (
         <StaffContext.Provider
@@ -55,7 +82,11 @@ function StaffProvider(props) {
                 userList,
                 setUserList,
                 addDeleteStaff,
-                findByEmail
+                findByEmail,
+                getClaimed,
+                claimedJobs,
+                setClaimedJobs,
+                cancelJob
             }}
         >
             {props.children}
