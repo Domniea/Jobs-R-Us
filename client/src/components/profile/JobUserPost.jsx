@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { JobContext } from "../../context/JobProvider";
+
 
 function JobUserPost(props) {
     const {
@@ -10,13 +12,17 @@ function JobUserPost(props) {
         deleteJob
     } = props
 
+    const {
+        finalizeJob
+    } = useContext(JobContext)
+    
     return(
         <div>
             <div className="job">
                 {
                     isPending &&
                     <button
-                        // onClick={completeJob}
+                        onClick={() => finalizeJob(_id)}
                     >
                         Complete
                     </button>

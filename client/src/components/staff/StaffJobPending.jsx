@@ -18,7 +18,6 @@ function StaffJobPending(props) {
 
     return (
         <div>
-            <h3>Staff Job Pending</h3>
             <div className="job">
                 {job}
                 <button onClick={() => cancelJob(_id)}>Cancel Job</button>

@@ -92,6 +92,17 @@ function JobProvider(props) {
 
     }
 
+    //Complete/Finalize Job
+    function finalizeJob(jobId) {
+        userAxios.put(`/api/api/jobs/${jobId}/finalize`)
+            .then(res => {
+                console.log(res.data)
+                setUsersJobsPosted(prevState => {
+                    return prevState.filter(job => job._id !== jobId)
+                })
+            })
+            .catch(err => console.log(err))
+    }
 
     return (
         <JobContext.Provider
@@ -109,6 +120,7 @@ function JobProvider(props) {
                 getUsersJobsCompleted,
                 postJob,
                 deleteJob,
+                finalizeJob,
                 acceptJob,
                 pendingJobs
             }}

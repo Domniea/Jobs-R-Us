@@ -5,7 +5,7 @@ const Job = require('../models/Job')
 //Find all Jobs
 jobRouter.get('/', (req, res, next) => {
     Job.find(
-        {isPending: false},
+        {isPending: false, isComplete: false},
         (err, allJobs) => {
             if(err) {
                 res.status(500)
@@ -19,7 +19,7 @@ jobRouter.get('/', (req, res, next) => {
 //Find All Users Jobs
 jobRouter.get('/:userId', (req, res, next) => {
     Job.find(
-        { user: req.params.userId},
+        { user: req.params.userId, isComplete: false},
         (err, allJobs) => {
             if(err) {
                 res.status(500)
@@ -67,6 +67,29 @@ jobRouter.delete(`/:jobId`, (req, res, next) => {
                 return next(err)
             }
             return res.status(200).send(deletedJob)
+        }
+    )
+})
+
+//Finalize Job
+jobRouter.put('/:jobId/finalize', (req, res, next) => {
+    Job.findOneAndUpdate(
+        {_id: req.params.jobId},
+        [
+            {
+                $set: {
+                    isComplete: true,
+                    completedBy: '$workedOnBy'
+                }
+            }
+        ],
+        {new: true},
+        (err, finalizedJob) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(finalizedJob.workedOnBy)
         }
     )
 })

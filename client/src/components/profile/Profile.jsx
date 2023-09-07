@@ -13,7 +13,8 @@ function Profile() {
         token,
         user: {
             username,
-            _id
+            _id,
+            isStaff
         },
         signup
     } = useContext(UserContext)
@@ -24,7 +25,7 @@ function Profile() {
 
     return (
         <div>
-            <h1>Profile Page</h1>
+            { !isStaff && <h1>Welcome {username}</h1>}
             <ProfileAddJobForm 
                 userId= {_id}
             />

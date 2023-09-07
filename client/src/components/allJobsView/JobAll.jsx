@@ -18,7 +18,7 @@ function Job(props) {
     const {
         acceptJob
     } = useContext(JobContext)
-
+    console.log(isPending)
 
     const user = JSON.parse(localStorage.getItem('user'))
     const staff = user.isStaff

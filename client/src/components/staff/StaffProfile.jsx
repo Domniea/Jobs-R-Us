@@ -1,5 +1,7 @@
 import React, {useContext, useState, useEffect} from "react";
+import { Link } from 'react-dom'
 import StaffJobPending from "./StaffJobPending";
+import JobListStaffCompleted from "./JobListStaffCompleted";
 import { UserContext } from "../../context/userProvider";
 import { StaffContext } from "../../context/StaffProvider";
 
@@ -30,11 +32,15 @@ function StaffProfile() {
         }
     )
 
-    console.log(claimedJobs)
+    // console.log(claimedJobs)
     return (
         <div>
-            <h1>Staff Profile</h1>
+            <h1>Welcome {username}</h1>
+            <h2>Pending Jobs</h2>
             {job}
+            <div>
+                <JobListStaffCompleted/>
+            </div>
         </div>
     )
 }

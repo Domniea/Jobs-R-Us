@@ -23,6 +23,7 @@ function JobList(props) {
     }, [])
 
 
+
     const job = allJobs.map(j => {
         return <JobAll
         key={j._id}

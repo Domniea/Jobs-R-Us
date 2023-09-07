@@ -26,7 +26,7 @@ function JobListUserCompleted(props) {
 
     return (
         <div className="jobList">
-            <h1>completed lists</h1>
+            <h1>Completed Work</h1>
             { job }
         </div>
     )
