@@ -71,6 +71,22 @@ jobRouter.post('/:userId', (req, res, next) => {
     })
 })
 
+//Edit Job
+jobRouter.put('/:jobId/edit', (req, res, next) => {
+    Job.findOneAndUpdate(
+        { _id: req.params.jobId },
+        req.body,
+        { new: true },
+        (err, editedJob) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(editedJob)
+        }
+    )
+})
+
 //Delete Job
 jobRouter.delete(`/:jobId`, (req, res, next) => {
     Job.findOneAndDelete(

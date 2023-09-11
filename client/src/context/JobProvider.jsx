@@ -48,7 +48,6 @@ function JobProvider(props) {
     function getUsersPending(userId) {
         userAxios.get(`/api/api/jobs/${userId}/pending`)
             .then(res => {
-                console.log(res.data)
                 setPendingJobs(res.data)
             })
             .catch(err => console.log(err))
@@ -82,6 +81,19 @@ function JobProvider(props) {
             })
     }
     
+    //Edit Job
+    function editJob(credentials, jobId) {
+        userAxios.put(`/api/api/jobs/${jobId}/edit`, credentials)
+            .then(res => {
+                console.log(res.data)
+                setUsersJobsPosted(prevState => {
+                    return prevState.map(job => job._id !== jobId ? job : res.data)
+                    
+                })
+            })
+            .catch(err => console.log(err))
+    }
+
     //Delete Job
     function deleteJob(jobId) {
         userAxios.delete(`/api/api/jobs/${jobId}`)
@@ -98,7 +110,7 @@ function JobProvider(props) {
     function acceptJob(user, jobId, isPending) {
         userAxios.put(`/api/api/jobs/${jobId}`, {workedOnBy: user, isPending: !isPending})
             .then(res => {
-                console.log(res)
+                console.log(res.data)
                 getAllJobs()
             })
             .catch(err => console.log(err))
@@ -113,9 +125,13 @@ function JobProvider(props) {
                 setUsersJobsPosted(prevState => {
                     return prevState.filter(job => job._id !== jobId)
                 })
+                setPendingJobs(prevState => {
+                    return prevState.filter(job => job._id !== jobId)
+                })
             })
             .catch(err => console.log(err))
     }
+    console.log(pendingJobs)
 
     return (
         <JobContext.Provider
@@ -133,6 +149,7 @@ function JobProvider(props) {
                 getUsersJobsCompleted,
                 postJob,
                 deleteJob,
+                editJob,
                 finalizeJob,
                 acceptJob,
                 pendingJobs,

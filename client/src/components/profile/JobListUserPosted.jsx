@@ -6,19 +6,13 @@ import { JobContext } from "../../context/JobProvider";
 function JobListUserPosted(props) {
 
     const {
-        usersJobsPosted,
-        deleteJob
+        usersJobsPosted
     } = useContext(JobContext)
-
-    const {
-        _id
-    } = props
 
     const job = usersJobsPosted.map(j => {
         return <JobUserPost
             key={j._id}
             {...j}
-            deleteJob={deleteJob}
         />
     })
 

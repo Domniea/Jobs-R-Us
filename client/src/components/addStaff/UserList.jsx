@@ -47,10 +47,11 @@ function UserList() {
     return (
         <div className="UserList">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Search By Email</label>
+                <label htmlFor="searchEmail">Search By Email</label>
             <input 
                 type="text"
                 name="searchEmail"
+                id="searchEmail"
                 value={inputs.searchEmail}
                 onChange={handleChange} 
                 placeholder="Email"

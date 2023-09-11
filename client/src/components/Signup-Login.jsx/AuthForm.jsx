@@ -20,6 +20,7 @@ function AuthForm(props) {
                 <input 
                     type="text"
                     name='username'
+                    id="username"
                     value={username}
                     onChange={handleChange}
                 />
@@ -29,6 +30,7 @@ function AuthForm(props) {
                 <input 
                     type="password"
                     name='password'
+                    id="password"
                     value={password}
                     onChange={handleChange}
                 />

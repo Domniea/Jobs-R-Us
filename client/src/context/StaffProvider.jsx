@@ -60,7 +60,7 @@ function StaffProvider(props) {
                     res.data
                 ]
             })
-            console.log(res)
+            console.log(res.data)
             // getAllJobs()
         })
         .catch(err => console.log(err))

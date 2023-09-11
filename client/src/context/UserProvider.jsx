@@ -93,8 +93,7 @@ function UserProvider(props) {
                 ...userState,
                 signup,
                 login,
-                logout,
-                loggedIn
+                logout
             }}
         >
             {props.children}

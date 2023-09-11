@@ -38,6 +38,7 @@ function User(props) {
                 <input 
                     type="checkbox"
                     name="isStaff" 
+                    id='isStaff'
                     checked={user.isStaff}
                     onChange={handleChange}
                 />

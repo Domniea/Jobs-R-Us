@@ -48,22 +48,27 @@ function CreateUser() {
                 <input 
                     type="text" 
                     name="username"
+                    id='username'
                     value={username}
                     onChange={handleChange}
+                    autoComplete="username"
                 />
                 <label htmlFor="username">Password</label>
                 <input 
                     type="text" 
                     name="password"
+                    id='password'
                     value={password}
                     onChange={handleChange}
                 />
                 <label htmlFor="email">Email</label>
                 <input 
-                    type="text" 
+                    type="email" 
                     name="email"
+                    id='email'
                     value={email}
                     onChange={handleChange}
+                    autoComplete="email"
                 />
                 <button>Submit</button>
             </form>

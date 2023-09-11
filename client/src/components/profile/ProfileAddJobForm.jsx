@@ -7,9 +7,9 @@ import { UserContext } from "../../context/userProvider";
 
 function JobForm(props) {
 
-// const {
-//         userState
-// } = useContext(UserContext)
+const {
+        token
+} = useContext(UserContext)
 
 const {
     postJob,
@@ -17,7 +17,10 @@ const {
 } = useContext(JobContext)
 
 const {
-    userId
+   _id,
+    editing,
+    toggle,
+    submit
 } = props
 
 const initInputs = {
@@ -38,18 +41,20 @@ function handleChange(e) {
 
 function handleSubmit(e) {
     e.preventDefault()
-    postJob(inputs, userId)   
-    getUsersJobsPosted(userId)
+    submit(inputs, _id) 
+    {editing && toggle()}
+    // { !editing && getUsersJobsPosted(_id) }
 }
 
     return(
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={editing ? {border: 'none'} : {border: '1px solid black'}}>
                 {/* <div> */}
                     <label htmlFor="job">Job</label>
                     <input 
                         type="text" 
                         name='job'
+                        id='job'
                         value={inputs.job}
                         onChange={handleChange}
                     />
@@ -59,6 +64,7 @@ function handleSubmit(e) {
                     <input 
                         type="text" 
                         name='location'
+                        id='location'
                         value={inputs.location}
                         onChange={handleChange}
                     />
@@ -68,6 +74,7 @@ function handleSubmit(e) {
                     <input 
                         type="text" 
                         name='price'
+                        id='price'
                         value={inputs.price}
                         onChange={handleChange}
                     />

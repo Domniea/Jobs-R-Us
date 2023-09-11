@@ -7,8 +7,7 @@ import { UserContext } from '../../context/userProvider'
 function Auth() {
 
     const {
-        userState,
-        signup,
+        errMsg,
         login
     } = useContext(UserContext)
 
@@ -18,11 +17,7 @@ function Auth() {
     }
 
     const [inputs, setInputs] = useState(initInputs)
-    const [loggedIn, SetLoggedIn] = useState(false)
 
-    function toggle() {
-        SetLoggedIn(prevState => !prevState)
-    }
     function handleChange(e) {
         const { name, value } = e.target
         setInputs(prevState => ({
@@ -31,11 +26,6 @@ function Auth() {
         }))
     }
 
-    function handleSignUp(e) {
-        e.preventDefault()
-        // console.log(inputs)
-        signup(inputs)
-    }
     function handleLogin(e) {
         e.preventDefault()
         // console.log(inputs)
@@ -43,31 +33,16 @@ function Auth() {
     }
 
     return (
-        <div className='Auth'>
-            {/* { !loggedIn ?
-                <>
-                    <AuthForm 
-                        inputs={inputs}
-                        handleChange={handleChange}
-                        handleSubmit={handleSignUp}
-                        btnText='Sign Up!'
-                    />
-                     <h2 onClick={toggle}>Already a user?</h2>
-                
-                </>
-                    :
-                    <> */}
-                        <AuthForm 
-                            inputs={inputs}
-                            handleChange={handleChange}
-                            handleSubmit={handleLogin}
-                            btnText='Log In!'
-                        />
-                         {/* <h2 onClick={toggle}>Create An Account?</h2> */}
-                {/* </>
-            } */}
-
+        <div className='Auth'>     
+            <AuthForm 
+                inputs={inputs}
+                handleChange={handleChange}
+                handleSubmit={handleLogin}
+                btnText='Log In!'
+            />
             <Link to='/createuser'>Create New Account</Link>
+            { errMsg && <h1>{errMsg}</h1> }
+
            
         </div>
     )

@@ -35,7 +35,7 @@ function StaffProfile() {
     // console.log(claimedJobs)
     return (
         <div>
-            <h1>Welcome {username}</h1>
+            <h1>Welcome {username[0].toUpperCase() + username.slice(1)}</h1>
             <StaffListPending />
             {/* {job} */}
             <div className="staffCompleted--container container-complete-payment">
