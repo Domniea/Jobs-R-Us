@@ -1,9 +1,9 @@
 import React, {useContext, useState, useEffect} from "react";
-import { Link } from 'react-dom'
-import StaffJobPending from "./StaffJobPending";
+import StaffListPending from "./StaffListPending";
 import JobListStaffCompleted from "./JobListStaffCompleted";
+import Payment from "./Payment";
 import { UserContext } from "../../context/userProvider";
-import { StaffContext } from "../../context/StaffProvider";
+
 
 function StaffProfile() {
     const {
@@ -13,33 +13,34 @@ function StaffProfile() {
         }
     } = useContext(UserContext)
 
-    const {
-        getClaimed,
-        claimedJobs,
-        setClaimedJobs
-    } = useContext(StaffContext)
+    // const {
+    //     getClaimed,
+    //     claimedJobs,
+    //     setClaimedJobs
+    // } = useContext(StaffContext)
     
-    useEffect(() => {
-        getClaimed(_id)
-    }, [])
+    // useEffect(() => {
+    //     getClaimed(_id)
+    // }, [])
     
-    const job = claimedJobs.map(j => {
-        return <StaffJobPending
-            key={j._id}
-            {...j}
-            userId={_id}
-        />
-        }
-    )
+    // const job = claimedJobs.map(j => {
+    //     return <StaffJobPending
+    //         key={j._id}
+    //         {...j}
+    //         userId={_id}
+    //     />
+    //     }
+    // )
 
     // console.log(claimedJobs)
     return (
         <div>
             <h1>Welcome {username}</h1>
-            <h2>Pending Jobs</h2>
-            {job}
-            <div>
+            <StaffListPending />
+            {/* {job} */}
+            <div className="staffCompleted--container container-complete-payment">
                 <JobListStaffCompleted/>
+                <Payment />
             </div>
         </div>
     )

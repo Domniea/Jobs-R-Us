@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { JobContext } from "../../context/JobProvider";
+import { StaffContext } from "../../context/StaffProvider";
 import { UserContext } from "../../context/userProvider";
 
 
@@ -13,12 +14,13 @@ function Job(props) {
         userId
     } = props
 
-
-   
     const {
         acceptJob
-    } = useContext(JobContext)
-    console.log(isPending)
+    } = useContext(StaffContext)
+        
+    // const {
+    //     acceptJob
+    // } = useContext(JobContext)
 
     const user = JSON.parse(localStorage.getItem('user'))
     const staff = user.isStaff

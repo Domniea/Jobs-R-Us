@@ -6,7 +6,7 @@ function JobStaffCompleted(props) {
     } = props
     return (
         <div>
-            <h4>{job}</h4>
+            <h5>{job}</h5>
         </div>
     )
 }

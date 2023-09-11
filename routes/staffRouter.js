@@ -98,4 +98,19 @@ staffRouter.put('/:jobId/cancel', (req, res, next) => {
 })
 
 
+//Get Total Earned
+staffRouter.get('/:userId/paytotal', (req, res, next) => {
+    Job.find(
+        { completedBy: req.params.userId },
+        (err, totalPay) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(totalPay)
+        }
+    )
+})
+
+
 module.exports = staffRouter

@@ -7,19 +7,12 @@ function JobListUserPosted(props) {
 
     const {
         usersJobsPosted,
-        getUsersJobsPosted,
         deleteJob
     } = useContext(JobContext)
 
     const {
         _id
     } = props
-
-    let pendingJobs = []
-
-    useEffect(() => {
-        getUsersJobsPosted(_id)
-    }, [])
 
     const job = usersJobsPosted.map(j => {
         return <JobUserPost
@@ -29,11 +22,9 @@ function JobListUserPosted(props) {
         />
     })
 
- 
-
     return (
         <div className="jobList">
-            <h1>Posted Jobs</h1>
+            <h2>Posted Jobs</h2>
             { job }
         </div>
     )

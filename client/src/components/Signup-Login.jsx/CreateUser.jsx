@@ -1,10 +1,13 @@
 import React, { useState, useContext } from "react";
-import { UserContext } from "../context/userProvider";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/userProvider";
 
 
 
 function CreateUser() {
 
+    const navigate = useNavigate()
+    
     const {
         errMsg,
         signup
@@ -40,7 +43,6 @@ function CreateUser() {
     return (
         <div>
             <h1>Create User</h1>
-
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label>
                 <input 
@@ -65,6 +67,7 @@ function CreateUser() {
                 />
                 <button>Submit</button>
             </form>
+            <button onClick={() => navigate('/')}>Back to Login </button>
                 <br></br>
                 <h2>{errMsg}</h2>
         </div>

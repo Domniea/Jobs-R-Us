@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext} from "react";
 import JobAll from "./JobAll.jsx";
 import { JobContext } from "../../context/JobProvider.jsx";
 import { UserContext } from "../../context/userProvider.jsx";
+import { StaffContext } from "../../context/StaffProvider.jsx";
 
 
 function JobList(props) {
@@ -15,13 +16,15 @@ function JobList(props) {
         user: {
             _id
         }
-    
     } = useContext(UserContext)
+
+    const {
+        claimedJobs
+    } = useContext(StaffContext)
 
     useEffect(() => {
         getAllJobs()
-    }, [])
-
+    }, [claimedJobs])
 
 
     const job = allJobs.map(j => {

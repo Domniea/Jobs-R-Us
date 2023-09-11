@@ -17,9 +17,11 @@ function JobProvider(props) {
     const [usersJobsPosted, setUsersJobsPosted] = useState([])
     const [usersJobsPending, setUsersJobsPending] = useState([])
     const [usersJobsCompleted, setUsersJobsCompleted] = useState([])
+    const [pendingJobs, setPendingJobs] = useState(
+        usersJobsPosted.filter(job => job.isPending === true)
+    )
     
-    const pendingJobs = usersJobsPosted.filter(job => job.isPending === true)
-
+    // const pendingJobs = usersJobsPosted.filter(job => job.isPending === true)
 
 
     //Get All Jobs
@@ -42,6 +44,16 @@ function JobProvider(props) {
             .catch(err => console.log(err))
     }
 
+    //Get Users Pending Jobs
+    function getUsersPending(userId) {
+        userAxios.get(`/api/api/jobs/${userId}/pending`)
+            .then(res => {
+                console.log(res.data)
+                setPendingJobs(res.data)
+            })
+            .catch(err => console.log(err))
+    }
+
     //Get User Completed
     function getUsersJobsCompleted(userId) {
         userAxios.get(`/api/api/jobs/${userId}/completed`)
@@ -56,19 +68,20 @@ function JobProvider(props) {
     function postJob(credentials, userId) {
         userAxios.post(`/api/api/jobs/${userId}`, credentials)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setUsersJobsPosted(prevState => {
                     return [
                         ...prevState, 
                         res.data
                     ]
                 })
+                console.log('job posted')
             })
             .catch(err => {
                 console.log(err.response.data.errMsg)
             })
     }
-
+    
     //Delete Job
     function deleteJob(jobId) {
         userAxios.delete(`/api/api/jobs/${jobId}`)
@@ -122,7 +135,8 @@ function JobProvider(props) {
                 deleteJob,
                 finalizeJob,
                 acceptJob,
-                pendingJobs
+                pendingJobs,
+                getUsersPending
             }}
         >
             {props.children}

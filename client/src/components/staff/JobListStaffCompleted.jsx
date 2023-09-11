@@ -27,7 +27,7 @@ function JobListStaffCompleted() {
     />
    })
     return (
-        <div>
+        <div className="staff--listCompleted">
             <h2>Completed Work</h2>
             {job}
         </div>

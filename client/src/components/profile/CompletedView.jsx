@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import JobListUserCompleted from "./profile/JobListUserCompleted";
-import { UserContext } from "../context/userProvider";
+import JobListUserCompleted from "./JobListUserCompleted";
+import { UserContext } from "../../context/userProvider";
 
 function CompletedView() {
     const {

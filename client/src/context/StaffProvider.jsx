@@ -16,6 +16,7 @@ function StaffProvider(props) {
     const [userList, setUserList] = useState([])
     const [claimedJobs, setClaimedJobs] = useState([])
     const [completedJobs, setCompletedJobs] = useState([])
+    const [totalPay, setTotalPay] = useState([])
 
 
     //Get All Users
@@ -49,7 +50,23 @@ function StaffProvider(props) {
             .catch(err => console.log(err))
     }
 
-    
+    //Accept Job Offer and toggle 'isPending'
+    function acceptJob(user, jobId, isPending) {
+    userAxios.put(`/api/api/jobs/${jobId}`, {workedOnBy: user, isPending: !isPending})
+        .then(res => {
+            setClaimedJobs(prevState => {
+                return [
+                    ...prevState,
+                    res.data
+                ]
+            })
+            console.log(res)
+            // getAllJobs()
+        })
+        .catch(err => console.log(err))
+
+    }
+
     //Get All Staff Claimed Jobs
     function getClaimed(userId) {
         userAxios.get(`/api/api/staff/${userId}/claimed`)
@@ -64,7 +81,7 @@ function StaffProvider(props) {
     function getCompletedJobs(userId) {
         userAxios.get(`/api/api/staff/${userId}/completed`)
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 setCompletedJobs(res.data)
             })
             .catch(err => console.log(err))
@@ -74,7 +91,6 @@ function StaffProvider(props) {
     function cancelJob(jobId) {
         userAxios.put(`/api/api/staff/${jobId}/cancel`)
             .then(res => {
-
                 setClaimedJobs(prevState => {
                     return  prevState.filter(job => job._id !== jobId)
                 }
@@ -83,6 +99,15 @@ function StaffProvider(props) {
             .catch(err => console.log(err))
     }
 
+    //Get Staff Total Earned
+    function getTotalEarned(userId) {
+        userAxios.get(`/api/api/staff/${userId}/paytotal`)
+            .then(res => {
+                // console.log(res)
+                setTotalPay(res.data)
+            })
+            .catch(err => console.log(err))
+    }
 
     return (
         <StaffContext.Provider
@@ -93,11 +118,15 @@ function StaffProvider(props) {
                 addDeleteStaff,
                 findByEmail,
                 getClaimed,
+                acceptJob,
                 getCompletedJobs,
                 completedJobs,
                 claimedJobs,
                 setClaimedJobs,
-                cancelJob
+                cancelJob,
+                getTotalEarned,
+                totalPay,
+                setTotalPay
             }}
         >
             {props.children}

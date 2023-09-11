@@ -23,6 +23,7 @@ function UserProvider(props) {
     }
 
     const [userState, setUserState] = useState(initUser)
+    const [loggedIn, setLoggedIn] = useState(false)
 
     function errMsg(err) {
         setUserState(prevState => ({
@@ -45,6 +46,7 @@ function UserProvider(props) {
                     token
                 }))
                 navigate('/profile')
+                setLoggedIn(true)
             })
             .catch(err => errMsg(err.response.data.errMsg))
     }
@@ -62,11 +64,11 @@ function UserProvider(props) {
                 token
             }))
             if(user.isStaff) {
-                console.log('staff')
                 navigate('/staff/profile')
             } else {
                 navigate('/profile')   
             }
+            setLoggedIn(true)
 
         })
         .catch(err => errMsg(err.response.data.errMsg))
@@ -76,8 +78,13 @@ function UserProvider(props) {
     function logout() {
         localStorage.removeItem('user')
         localStorage.removeItem('token')
-        setUserState(initUser)
+        setUserState({
+            user: {},
+            token: '',
+            errMsg: ''
+        })
         navigate('/')
+        setLoggedIn(false)
     }
 
     return (
@@ -86,7 +93,8 @@ function UserProvider(props) {
                 ...userState,
                 signup,
                 login,
-                logout
+                logout,
+                loggedIn
             }}
         >
             {props.children}

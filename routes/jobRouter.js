@@ -30,6 +30,20 @@ jobRouter.get('/:userId', (req, res, next) => {
     )
 })
 
+//Find Users Pending
+jobRouter.get('/:userId/pending', (req, res, next) => {
+    Job.find(
+        { user: req.params.userId, isPending: true, isComplete: false },
+        (err, pending) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(pending)
+        }
+    )
+})
+
 //Find Users Completed Jobs
 jobRouter.get('/:userId/completed', (req, res, next) => {
     Job.find(

@@ -1,8 +1,10 @@
 h1 {
   text-align: center;
+  margin: 10vh;
 }
 
 form {
+  margin: 3vh;
   padding: 1vh;
   display: flex;
   flex-direction: column;
@@ -24,13 +26,27 @@ a {
   text-decoration: none;
 }
 
+.Auth {
+  /* height: 50vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.WelcomeHeader {
+  font-size: 2rem;
+}
+
 .Navbar {
   font-size: 1.75rem;
+  padding: 5vh;
+  background-color: grey;
 }
 
 .UserList {
   height: 45vh;
-  margin: 10%;
+  margin: 10vh;
   padding: 5vw;
   border: 1px solid grey;
   overflow: scroll;
@@ -60,4 +76,40 @@ flex-direction: row;
   border-radius: 7px;
   background-color: blue;
   color: white
+}
+
+/* .staffCompleted--container {
+  height: 35vh;
+  width: 40vw;
+  border: 1px solid black;
+  overflow: scroll;
+} */
+
+.payment--container {
+  height: 25vh;
+  width: 25vw;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: right;
+}
+
+.container-complete-payment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  margin: 2vh;
+  padding: 2vh;
+
+}
+
+.staff--listCompleted {
+  padding: 2vh;
+  height: 35vh;
+  width: 40vw;
+  border: 1px solid black;
+  overflow: scroll;
+
 }

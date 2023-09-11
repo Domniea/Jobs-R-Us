@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import User from "./User";
-import { StaffContext } from "../context/StaffProvider";
+import User from "../User";
+import { StaffContext } from "../../context/StaffProvider";
 
 function UserList() {
 
