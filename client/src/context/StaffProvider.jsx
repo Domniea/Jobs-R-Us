@@ -30,7 +30,7 @@ function StaffProvider(props) {
     function findByEmail(emaiAddress) {
         userAxios.get(`/api/api/staff/search/?email=${emaiAddress}`)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setUserList(res.data)
             })
             .catch(err => console.log(err))
@@ -44,7 +44,7 @@ function StaffProvider(props) {
                     return prevState.map(person => person._id !== userId ? person : res.data)
                 })
                 const employee = res.data.isStaff
-                console.log(localStorage.user)
+                // console.log(localStorage.user)
             })
                 // const employee = res.
             .catch(err => console.log(err))
@@ -60,7 +60,7 @@ function StaffProvider(props) {
                     res.data
                 ]
             })
-            console.log(res.data)
+            // console.log(res.data)
             // getAllJobs()
         })
         .catch(err => console.log(err))

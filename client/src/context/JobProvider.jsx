@@ -131,7 +131,6 @@ function JobProvider(props) {
             })
             .catch(err => console.log(err))
     }
-    console.log(pendingJobs)
 
     return (
         <JobContext.Provider

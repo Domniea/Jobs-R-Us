@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import User from "../User";
+import User from "./User";
 import { StaffContext } from "../../context/StaffProvider";
 
 function UserList() {
@@ -31,7 +31,6 @@ function UserList() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(inputs)
         findByEmail(inputs.searchEmail)
     }
 

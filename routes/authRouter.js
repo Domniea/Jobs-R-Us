@@ -26,8 +26,8 @@ authRouter.post('/signup', (req, res, next) => {
                     res.status(500)
                     return next(err)
                 }
-                const token = jwt.sign(savedUser.toObject(), process.env.SECRET)
-                return res.status(200).send({ token, user: savedUser.toObject() })
+                const token = jwt.sign(savedUser.hidePersonal(), process.env.SECRET)
+                return res.status(200).send({ token, user: savedUser.hidePersonal() })
             })
         }
     )
@@ -55,8 +55,8 @@ authRouter.post('/login', (req, res, next) => {
                     res.status(403)
                     return next(new Error('Username or Password do not Match'))
                 }
-                const token = jwt.sign(user.toObject(), process.env.SECRET)
-                return res.status(201).send({ token, user: user.toObject() })
+                const token = jwt.sign(user.hidePersonal(), process.env.SECRET)
+                return res.status(201).send({ token, user: user.hidePersonal() })
             })
         })
 })

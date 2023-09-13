@@ -12,7 +12,7 @@ function CreateUser() {
         errMsg,
         signup
     } = useContext(UserContext)
-    console.log(errMsg)
+
     const initInputs = {
         username: '',
         password: '',
@@ -20,6 +20,7 @@ function CreateUser() {
     }
 
     const [inputs, setInputs] = useState(initInputs)
+    
     const {
         username,
         password,
@@ -41,7 +42,7 @@ function CreateUser() {
     }
 
     return (
-        <div>
+        <div className="CreateUser">
             <h1>Create User</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label>

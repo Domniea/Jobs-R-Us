@@ -35,7 +35,7 @@ const userSchema = new Schema({
     }
 })
 
-//Encrypt password
+//Encrypt Password
 userSchema.pre('save', function(next) {
     const user = this
     if(!user.isModified('password')) {
@@ -50,7 +50,7 @@ userSchema.pre('save', function(next) {
     })
 })
 
-//Validate encrypted password
+//Validate Encrypted Password
 userSchema.methods.checkPassword = function(passwordAttempt, callback) {
     bcrypt.compare(passwordAttempt, this.password, (err, isMatch) => {
         if(err) {
@@ -58,7 +58,14 @@ userSchema.methods.checkPassword = function(passwordAttempt, callback) {
         }
         return callback(null, isMatch)
     })
-    // res.send('works')
+}
+
+//Remove Password From FrontEnd
+userSchema.methods.hidePersonal = function(){
+    const user = this.toObject()
+    delete user.password
+    delete user.email
+    return user
 }
 
 module.exports = mongoose.model('User', userSchema)
