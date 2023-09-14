@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import AuthForm from './AuthForm'
-import { UserContext } from '../../context/userProvider'
+import { UserContext } from '../../context/UserContext'
 
 
 function Auth() {

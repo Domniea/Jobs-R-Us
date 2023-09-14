@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import { JobContext } from "../../context/JobProvider";
+// import { JobContext } from "../../context/JobProvider";
 import { StaffContext } from "../../context/StaffProvider";
-import { UserContext } from "../../context/userProvider";
+// import { UserContext } from "../../context/UserContext";
 
-
+z
 function Job(props) {
     const { 
         job, 

@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import JobStaffCompleted from "./JobStaffCompleted";
-import { UserContext } from "../../context/userProvider";
+import { UserContext } from "../../context/UserContext";
 import { StaffContext } from "../../context/StaffProvider";
 
 

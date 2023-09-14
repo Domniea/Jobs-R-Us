@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from "react";
 import JobAll from "./JobAll.jsx";
 import { JobContext } from "../../context/JobProvider.jsx";
-import { UserContext } from "../../context/userProvider.jsx";
+import { UserContext } from "../../context/UserContext.jsx";
 import { StaffContext } from "../../context/StaffProvider.jsx";
 
 

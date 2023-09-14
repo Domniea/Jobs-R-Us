@@ -2,7 +2,7 @@ import React, {useContext, useState, useEffect} from "react";
 import StaffListPending from "./StaffListPending";
 import JobListStaffCompleted from "./JobListStaffCompleted";
 import Payment from "./Payment";
-import { UserContext } from "../../context/userProvider";
+import { UserContext } from "../../context/UserContext";
 
 
 function StaffProfile() {
