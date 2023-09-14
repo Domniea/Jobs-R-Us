@@ -1,7 +1,7 @@
 const express = require('express')
 const staffRouter = express.Router()
 const User = require('../models/user')
-const Job = require('../models/Job')
+const Job = require('../models/job')
 
 //Get all Users
 staffRouter.get('/', (req, res, next) => {

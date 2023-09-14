@@ -1,6 +1,6 @@
 const express = require('express')
 const jobRouter = express.Router()
-const Job = require('../models/Job')
+const Job = require('../models/job')
 
 //Find all Jobs
 jobRouter.get('/', (req, res, next) => {
