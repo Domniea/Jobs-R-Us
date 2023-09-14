@@ -34,7 +34,7 @@ function UserProvider(props) {
 
     //Signup
     function signup(credentials) {
-        axios.post(`https://jobs-r-us-production.up.railway.app/auth/signup`, credentials)
+        axios.post(`https://jobs-r-us-production.up.railway.app/api/auth/signup`, credentials)
             .then(res => {
                 const { token, user } = res.data
                 localStorage.setItem('token', token)
@@ -53,7 +53,7 @@ function UserProvider(props) {
 
     //Login
     function login(credentials) {
-        axios.post(`https://jobs-r-us-production.up.railway.app/auth/login`, credentials)
+        axios.post(`https://jobs-r-us-production.up.railway.app/api/auth/login`, credentials)
         .then(res => {
             const { token, user } = res.data
             localStorage.setItem('token', token)
