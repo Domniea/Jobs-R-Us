@@ -1,14 +1,14 @@
 import React, { useState, createContext } from "react";
 import { useNavigate } from "react-router-dom"; 
-// import axios from "axios";
+import axios from "axios";
 
-// const userAxios = axios.create()
+const userAxios = axios.create()
 
-// axios.interceptors.request.use(config => {
-//     const token = localStorage.getItem('token')
-//     config.headers.Authorization = `Bearer ${token}`
-//     return config
-// })
+axios.interceptors.request.use(config => {
+    const token = localStorage.getItem('token')
+    config.headers.Authorization = `Bearer ${token}`
+    return config
+})
 
 const UserContext = createContext()
 
