@@ -3,7 +3,6 @@ import React, { useContext, useState } from "react";
 import { StaffContext } from "../../context/StaffProvider";
 // import { UserContext } from "../../context/UserContext";
 
-z
 function Job(props) {
     const { 
         job, 

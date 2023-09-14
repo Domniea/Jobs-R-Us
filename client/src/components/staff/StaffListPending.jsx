@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { Link } from 'react-dom'
 import StaffJobPending from "./StaffJobPending";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../../context/UserProvider";
 import { StaffContext } from "../../context/StaffProvider";
 
 

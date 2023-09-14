@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import ProfileAddJobForm from "./ProfileAddJobForm";
 import JobListUserPosted from "./JobListUserPosted";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../../context/UserProvider";
 import { JobContext } from "../../context/JobProvider";
 
 function Profile() {
