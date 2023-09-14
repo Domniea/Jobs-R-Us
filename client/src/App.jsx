@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { UserContext } from './context/userProvider'
-import { JobContext } from './context/JobProvider'
-import { StaffContext } from './context/StaffProvider'
+import { UserContext } from './context/UserProvider'
+
 import { Routes, Route } from 'react-router-dom'
 import Auth from './components/Signup-Login.jsx/Auth'
 import CreateUser from './components/Signup-Login.jsx/CreateUser'

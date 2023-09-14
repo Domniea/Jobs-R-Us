@@ -137,9 +137,19 @@ flex-direction: row;
     flex-direction: column;
   }
 
+  /* .container-complete-payment {
+    height: 40vh;
+  } */
+
   .container-complete-payment {
     flex-direction: column;
-    height: 40vh;
+
+  }
+
+  .payment--container {
+    
+    height: 15rem;
+    width: 15rem;
   }
   
 }
