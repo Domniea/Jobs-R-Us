@@ -26,7 +26,7 @@ function JobProvider(props) {
 
     //Get All Jobs
     function getAllJobs() {
-        userAxios.get('/api/api/jobs')
+        userAxios.get(`https://jobs-r-us-production.up.railway.app/jobs`)
             .then(res => {
                 // console.log(res.data)
                 return setAllJobs(res.data)
@@ -36,7 +36,7 @@ function JobProvider(props) {
 
     //Get User All
     function getUsersJobsPosted(userId) {
-        userAxios.get(`/api/api/jobs/${userId}`)
+        userAxios.get(`https://jobs-r-us-production.up.railway.app/jobs/${userId}`)
             .then(res => {
                 // console.log(res.data)
                 return setUsersJobsPosted(res.data)
@@ -46,7 +46,7 @@ function JobProvider(props) {
 
     //Get Users Pending Jobs
     function getUsersPending(userId) {
-        userAxios.get(`/api/api/jobs/${userId}/pending`)
+        userAxios.get(`https://jobs-r-us-production.up.railway.app/jobs/${userId}/pending`)
             .then(res => {
                 setPendingJobs(res.data)
             })
@@ -55,7 +55,7 @@ function JobProvider(props) {
 
     //Get User Completed
     function getUsersJobsCompleted(userId) {
-        userAxios.get(`/api/api/jobs/${userId}/completed`)
+        userAxios.get(`https://jobs-r-us-production.up.railway.app/jobs/${userId}/completed`)
             .then(res => {
                 // console.log(res.data)
                 setUsersJobsCompleted(res.data)
@@ -65,7 +65,7 @@ function JobProvider(props) {
 
     //Post Job
     function postJob(credentials, userId) {
-        userAxios.post(`/api/api/jobs/${userId}`, credentials)
+        userAxios.post(`https://jobs-r-us-production.up.railway.app/jobs/${userId}`, credentials)
             .then(res => {
                 // console.log(res.data)
                 setUsersJobsPosted(prevState => {
@@ -83,7 +83,7 @@ function JobProvider(props) {
     
     //Edit Job
     function editJob(credentials, jobId) {
-        userAxios.put(`/api/api/jobs/${jobId}/edit`, credentials)
+        userAxios.put(`https://jobs-r-us-production.up.railway.app/jobs/${jobId}/edit`, credentials)
             .then(res => {
                 console.log(res.data)
                 setUsersJobsPosted(prevState => {
@@ -96,7 +96,7 @@ function JobProvider(props) {
 
     //Delete Job
     function deleteJob(jobId) {
-        userAxios.delete(`/api/api/jobs/${jobId}`)
+        userAxios.delete(`https://jobs-r-us-production.up.railway.app/jobs/${jobId}`)
             .then(res => {
                 console.log(res.data)
                 setUsersJobsPosted(prevState => {
@@ -108,7 +108,7 @@ function JobProvider(props) {
 
     //Accept Job Offer and toggle 'isPending'
     function acceptJob(user, jobId, isPending) {
-        userAxios.put(`/api/api/jobs/${jobId}`, {workedOnBy: user, isPending: !isPending})
+        userAxios.put(`https://jobs-r-us-production.up.railway.app/jobs/${jobId}`, {workedOnBy: user, isPending: !isPending})
             .then(res => {
                 console.log(res.data)
                 getAllJobs()
@@ -119,7 +119,7 @@ function JobProvider(props) {
 
     //Complete/Finalize Job
     function finalizeJob(jobId) {
-        userAxios.put(`/api/api/jobs/${jobId}/finalize`)
+        userAxios.put(`https://jobs-r-us-production.up.railway.app/jobs/${jobId}/finalize`)
             .then(res => {
                 console.log(res.data)
                 setUsersJobsPosted(prevState => {

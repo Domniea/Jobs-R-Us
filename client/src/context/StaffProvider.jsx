@@ -21,14 +21,14 @@ function StaffProvider(props) {
 
     //Get All Users
     function getAllUsers() {
-        userAxios.get('/api/api/staff')
+        userAxios.get(`https://jobs-r-us-production.up.railway.app/staff`)
             .then(res => setUserList(res.data))
             .catch(err => console.log(err))
     }
 
     //Find By Email
     function findByEmail(emaiAddress) {
-        userAxios.get(`/api/api/staff/search/?email=${emaiAddress}`)
+        userAxios.get(`https://jobs-r-us-production.up.railway.app/staff/search/?email=${emaiAddress}`)
             .then(res => {
                 // console.log(res.data)
                 setUserList(res.data)
@@ -38,7 +38,7 @@ function StaffProvider(props) {
 
     //Add & Delete Staff
     function addDeleteStaff(credentials, userId) {
-        userAxios.put(`/api/api/staff/${userId}`, credentials)
+        userAxios.put(`https://jobs-r-us-production.up.railway.app/staff/${userId}`, credentials)
             .then(res => {
                 setUserList(prevState => {
                     return prevState.map(person => person._id !== userId ? person : res.data)
@@ -52,7 +52,7 @@ function StaffProvider(props) {
 
     //Accept Job Offer and toggle 'isPending'
     function acceptJob(user, jobId, isPending) {
-    userAxios.put(`/api/api/jobs/${jobId}`, {workedOnBy: user, isPending: !isPending})
+    userAxios.put(`https://jobs-r-us-production.up.railway.app/jobs/${jobId}`, {workedOnBy: user, isPending: !isPending})
         .then(res => {
             setClaimedJobs(prevState => {
                 return [
@@ -69,7 +69,7 @@ function StaffProvider(props) {
 
     //Get All Staff Claimed Jobs
     function getClaimed(userId) {
-        userAxios.get(`/api/api/staff/${userId}/claimed`)
+        userAxios.get(`https://jobs-r-us-production.up.railway.app/staff/${userId}/claimed`)
             .then(res => {
                 // console.log(res)
                 setClaimedJobs(res.data)
@@ -79,7 +79,7 @@ function StaffProvider(props) {
 
     //Get All Staff Completed Jobs
     function getCompletedJobs(userId) {
-        userAxios.get(`/api/api/staff/${userId}/completed`)
+        userAxios.get(`https://jobs-r-us-production.up.railway.app/staff/${userId}/completed`)
             .then(res => {
                 // console.log(res)
                 setCompletedJobs(res.data)
@@ -89,7 +89,7 @@ function StaffProvider(props) {
 
     //Cancel Job
     function cancelJob(jobId) {
-        userAxios.put(`/api/api/staff/${jobId}/cancel`)
+        userAxios.put(`https://jobs-r-us-production.up.railway.app/staff/${jobId}/cancel`)
             .then(res => {
                 setClaimedJobs(prevState => {
                     return  prevState.filter(job => job._id !== jobId)
@@ -101,7 +101,7 @@ function StaffProvider(props) {
 
     //Get Staff Total Earned
     function getTotalEarned(userId) {
-        userAxios.get(`/api/api/staff/${userId}/paytotal`)
+        userAxios.get(`https://jobs-r-us-production.up.railway.app/staff/${userId}/paytotal`)
             .then(res => {
                 // console.log(res)
                 setTotalPay(res.data)
