@@ -11,6 +11,16 @@ mongoose.set('strictQuery', false)
 
 app.use(express.json())
 app.use(morgan('dev'))
+app.use(
+    cors({
+      origin: ["https://jobs-r-us-production.up.railway.app/"],
+      methods: ["GET", "POST", "PUT","DELETE"],
+      credentials: true,
+      origin: true,
+    })
+  );
+
+
 
 mongoose.connect(`${process.env.MONGO_URI}`)
     .then(console.log('Connected to DB'))
