@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 h1 {
   text-align: center;
   margin: 3rem;
@@ -11,11 +15,14 @@ form {
   justify-content: center;
   align-items: center;
   border: 1px solid grey;
+  border-radius: .5rem;
 }
 nav {
   display: flex;
   justify-content: space-evenly;
-
+}
+nav > a {
+  color: white;
 }
 
 input {
@@ -53,6 +60,7 @@ a {
   margin: 5rem;
   padding: 3rem;
   border: 1px solid grey;
+  border-radius: .5rem;
   overflow: scroll;
 }
 
@@ -65,10 +73,12 @@ flex-direction: row;
   font-size: 1.5rem;
   font-weight: bold;
 }
+
 .jobList {
-  border: 1px solid grey;
   margin: 5rem;
   padding: 3rem;
+  border: 1px solid grey;
+  border-radius: .5rem;
 }
 
 .job {
@@ -81,9 +91,14 @@ flex-direction: row;
   margin: .5rem;
   padding: .75rem;
   border: 1px solid black;
-  border-radius: 7px;
+  border-radius: .5rem;;
   background-color: blue;
   color: white
+}
+
+.StaffListPending {
+  border: 1px solid black;
+  border-radius: .5rem;
 }
 
 /* .staffCompleted--container {
@@ -97,8 +112,9 @@ flex-direction: row;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border: 1px solid black;
   margin: 2rem;
+  border: 1px solid black;
+  border-radius: .5rem;
   /* padding ; */
 }
 
@@ -107,9 +123,10 @@ flex-direction: row;
   flex-direction: column;
   margin: 2rem;
   padding: 0 3rem;
-  height: 35vh;
-  width: 40vw;
+  height: 20rem;
+  width: 30rem;
   border: 1px solid black;
+  border-radius: .5rem;
   overflow: scroll;
 }
 
@@ -117,18 +134,20 @@ flex-direction: row;
   height: 20rem;
   width: 20rem;
   margin: 2rem;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 1px solid black;
+  border-radius: .5rem;
   float: right;
 }
 
 @media screen and (max-width: 900px) {
-  /* body{
-    background-color: blue;
-  } */
+  html{
+    /* background-color: blue; */
+    font-size: .75rem;
+  }
 
   h1 {
     margin: 1rem;
@@ -137,19 +156,41 @@ flex-direction: row;
     flex-direction: column;
   }
 
-  /* .container-complete-payment {
-    height: 40vh;
-  } */
+  .CreateUser {
+    margin: 1rem;
+  }
+
+  .click-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .jobList {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .StaffListPending > h2 {
+    text-align: center;
+  }
 
   .container-complete-payment {
     flex-direction: column;
+    margin: 1rem;
+  }
 
+  .staff--listCompleted {
+    height: 25rem;
+    width: 25rem;
   }
 
   .payment--container {
-    
-    height: 15rem;
+    height: 5rem;
     width: 15rem;
+    padding: 2rem 0;
+    float: none;
   }
   
 }
