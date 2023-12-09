@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import AuthForm from './AuthForm'
 import { UserContext } from '../../context/UserProvider'
+import AuthForm from './AuthForm'
+import WorkSVG from '../../svg/welcome-jobs.svg'
 
 
 function Auth() {
@@ -66,9 +67,8 @@ function Auth() {
                     via email, and convert their profile to a "Staff" profile,
                     allowing them to respond/accept job postings
                 </h4>
-
             </div>
-
+                <img src={WorkSVG} className='homepage--SVG'/>
            
         </div>
     )

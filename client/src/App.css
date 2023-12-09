@@ -59,6 +59,10 @@ a {
   margin: 3rem;
 }
 
+/* .homepage--SVG {
+  width: 30%;
+} */
+
 .Navbar {
   font-size: 1.75rem;
   padding: 2rem;
@@ -156,7 +160,7 @@ flex-direction: row;
 @media screen and (max-width: 700px) {
   html{
     /* background-color: blue; */
-    font-size: .6rem;
+    font-size: .75rem;
   }
 
   h1 {
@@ -167,6 +171,9 @@ flex-direction: row;
     flex-direction: column;
   }
 
+  .homepage--SVG {
+    width: 40%;
+  }
   .CreateUser {
     margin: 1rem;
   }
