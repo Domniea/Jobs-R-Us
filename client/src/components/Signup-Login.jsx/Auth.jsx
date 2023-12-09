@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../../context/UserProvider'
 import AuthForm from './AuthForm'
-import WorkSVG from '../../svg/welcome-jobs.svg'
+import WorkSVG from '/src/svg/welcome-jobs.svg'
 
 
 function Auth() {
@@ -34,23 +34,20 @@ function Auth() {
     }
 
     return (
-        <div className='Auth'>     
-            <AuthForm 
-                inputs={inputs}
-                handleChange={handleChange}
-                handleSubmit={handleLogin}
-                btnText='Log In!'
-            />
-            <Link to='/createuser'>Create New Account</Link>
-            { errMsg && <h1>{errMsg}</h1> }
+        <div className='Auth'>
+            <div className='Auth--container'>
+                <AuthForm 
+                    inputs={inputs}
+                    handleChange={handleChange}
+                    handleSubmit={handleLogin}
+                    btnText='Log In!'
+                />
+                <Link to='/createuser'>Create New Account</Link>
+                { errMsg && <h1 className='errorMsg'>{errMsg}</h1> }
+                
+            </div>  
 
             <div className='test-instructions'>
-                {/* <h2>
-                    For testing purposes User/Passwords 
-                    are listed below with their respective permissions 
-                    in order to see full capabilities of the program. 
-                
-                </h2> */}
                 <h2>
                     - For testing purposes ADMIN credentials are listed below 
                     to allow users to login as Managment. 

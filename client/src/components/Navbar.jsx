@@ -4,6 +4,7 @@ import { JobContext } from "../context/JobProvider";
 import { StaffContext } from "../context/StaffProvider";
 import { Link } from 'react-router-dom'
 
+
 function Navbar(props) {
     // const {
     //     loggedIn
@@ -38,7 +39,7 @@ function Navbar(props) {
     
 
     return (
-        <div className="Navbar dropdown bg-blue-500">
+        <div className="Navbar dropdown">
             <nav className="dropdown-content">
                 { isStaff && <Link to='/staff/profile'>Staff</Link> }
                 <Link to={'/profile'}>

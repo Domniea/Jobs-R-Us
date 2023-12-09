@@ -14,7 +14,7 @@ function AuthForm(props) {
 
     return (
         <>
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit}  >
             <div>
                 <label htmlFor="username">username</label>
                 <input 
