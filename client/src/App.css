@@ -40,6 +40,7 @@ a {
 
 .Auth {
   /* height: 50vh; */
+  /* margin: 0 3rem 3rem 3rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,6 +53,10 @@ a {
 
 .CreateUser {
   margin: 5rem;
+}
+
+.test-instructions {
+  margin: 3rem;
 }
 
 .Navbar {
@@ -151,11 +156,11 @@ flex-direction: row;
 @media screen and (max-width: 700px) {
   html{
     /* background-color: blue; */
-    font-size: .75rem;
+    font-size: .6rem;
   }
 
   h1 {
-    margin: 1rem;
+    margin: 2rem;
   }
 
   form{

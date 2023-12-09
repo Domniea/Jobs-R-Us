@@ -28,7 +28,7 @@ function Auth() {
 
     function handleLogin(e) {
         e.preventDefault()
-        // console.log(inputs)
+        // console.log(inputs)Accompaniment
         login(inputs)
     }
 
@@ -42,6 +42,32 @@ function Auth() {
             />
             <Link to='/createuser'>Create New Account</Link>
             { errMsg && <h1>{errMsg}</h1> }
+
+            <div className='test-instructions'>
+                {/* <h2>
+                    For testing purposes User/Passwords 
+                    are listed below with their respective permissions 
+                    in order to see full capabilities of the program. 
+                
+                </h2> */}
+                <h2>
+                    - For testing purposes ADMIN credentials are listed below 
+                    to allow users to login as Managment. 
+                </h2>
+                <h3>
+                    <ul>
+                            <li>Username: "boss"</li>
+                            <li>Password: "password"</li>
+                    </ul>
+
+                </h3>
+                <h4>
+                    * While logged in as ADMIN(Managment), Users can search their profiles(or a secondary test profile)
+                    via email, and convert their profile to a "Staff" profile,
+                    allowing them to respond/accept job postings
+                </h4>
+
+            </div>
 
            
         </div>
