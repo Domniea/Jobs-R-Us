@@ -38,8 +38,8 @@ function Navbar(props) {
     
 
     return (
-        <div className="Navbar">
-            <nav>
+        <div className="Navbar dropdown bg-blue-500">
+            <nav className="dropdown-content">
                 { isStaff && <Link to='/staff/profile'>Staff</Link> }
                 <Link to={'/profile'}>
                 {
@@ -56,6 +56,46 @@ function Navbar(props) {
                 <button onClick={() => logout()}>Logout</button>
             </nav>
         </div>
+
+        // <div className="Navbar dropdown">
+        //     <nav className="dropdown">
+        //         <ul className="dropdown-content">
+                    
+        //             { isStaff && 
+        //                 <li>
+        //                     <Link to='/staff/profile'>Staff</Link> 
+        //                 </li>
+        //             }
+        //             <li>
+        //                 <Link to={'/profile'}>
+        //                 {
+        //                     pendingJobs.length > 0 &&
+        //                         <li>
+        //                             <span className="badge">
+        //                                 {pendingJobs.length}
+        //                             </span>
+
+        //                         </li>
+
+        //                 }
+        //                     Profile
+        //                 </Link>
+        //             </li>
+        //             {/* { isStaff && <Link to='/profile'>Post</Link> } */}
+        //                 <li>
+        //                     <Link to='/jobsmain'>Jobs</Link>
+        //                 </li>
+
+        //             { isManager  &&
+        //                 <li>
+        //                     <Link to='/management/addStaff'>Add Staff</Link>
+        //                 </li>
+        //             }
+        //             <button onClick={() => logout()}>Logout</button>
+
+        //         </ul>
+        //     </nav>
+        // </div>
     )
 }
 

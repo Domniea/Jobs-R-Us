@@ -1,5 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 h1 {
@@ -143,7 +148,7 @@ flex-direction: row;
   float: right;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   html{
     /* background-color: blue; */
     font-size: .75rem;
@@ -152,6 +157,7 @@ flex-direction: row;
   h1 {
     margin: 1rem;
   }
+
   form{
     flex-direction: column;
   }
@@ -193,4 +199,32 @@ flex-direction: row;
     float: none;
   }
   
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  nav > a {
+    color: black;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
 }

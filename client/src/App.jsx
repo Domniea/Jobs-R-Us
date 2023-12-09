@@ -30,7 +30,7 @@ function App() {
 
   
   return (
-    <>
+   <div className='App'>
     {
       token ? 
         <Navbar />
@@ -57,7 +57,7 @@ function App() {
         </StaffRoute>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
-    </>
+    </div>
   )
 }
 
