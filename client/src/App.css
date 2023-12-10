@@ -42,6 +42,10 @@ input {
 a {
   text-decoration: none;
 }
+.WelcomeHeader {
+  background-image: url('./svg/wintery-sunburst.svg');
+  background-size: cover;
+  }
 
 .Auth {
   display: flex;
