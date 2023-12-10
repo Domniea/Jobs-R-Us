@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import User from "../User";
+import User from "../addStaff/User";
 import { StaffContext } from "../../context/StaffProvider";
 
 function UserList() {
@@ -45,18 +45,18 @@ function UserList() {
 
     return (
         <div className="UserList">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="staffSearch">
                 <label htmlFor="searchEmail">Search By Email</label>
-            <input 
-                type="text"
-                name="searchEmail"
-                id="searchEmail"
-                value={inputs.searchEmail}
-                onChange={handleChange} 
-                placeholder="Email"
-            />
-            <button>Search</button>
-        </form>
+                <input 
+                    type="text"
+                    name="searchEmail"
+                    id="searchEmail"
+                    value={inputs.searchEmail}
+                    onChange={handleChange} 
+                    placeholder="Email"
+                />
+                <button>Search</button>
+            </form>
 
             {user}
         </div>

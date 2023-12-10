@@ -48,7 +48,10 @@ function handleSubmit(e) {
 
     return(
         <div>
-            <form onSubmit={handleSubmit} style={editing ? {border: 'none'} : {border: '1px solid black'}}>
+            <form onSubmit={handleSubmit} 
+                style={editing ? {border: 'none'} : {border: '1px solid black'}}
+                className="profile--addJob"
+            >
                 {/* <div> */}
                     <label htmlFor="job">Job</label>
                     <input 
