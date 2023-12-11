@@ -41,20 +41,22 @@ function Navbar(props) {
     return (
         <div className="Navbar dropdown">
             <nav className="dropdown-content">
-                { isStaff && <Link to='/staff/profile'>Staff</Link> }
-                <Link to={'/profile'}>
-                {
-                    pendingJobs.length > 0 &&
-                            <span className="badge">
-                                {pendingJobs.length}
-                            </span>
-                }
-                    Profile
-                </Link>
-                {/* { isStaff && <Link to='/profile'>Post</Link> } */}
-                <Link to='/jobsmain'>Jobs</Link>
-                { isManager  && <Link to='/management/addStaff'>Add Staff</Link> }
-                <button onClick={() => logout()}>Logout</button>
+                <ul>
+                    { isStaff && <Link to='/staff/profile'>Staff</Link> }
+                    <Link to={'/profile'}>
+                    {
+                        pendingJobs.length > 0 &&
+                                <span className="badge">
+                                    {pendingJobs.length}
+                                </span>
+                    }
+                        Profile
+                    </Link>
+                    {/* { isStaff && <Link to='/profile'>Post</Link> } */}
+                    <Link to='/jobsmain'>Jobs</Link>
+                    { isManager  && <Link to='/management/addStaff'>Add Staff</Link> }
+                    <button onClick={() => logout()}>Logout</button>
+                </ul>
             </nav>
         </div>
 
