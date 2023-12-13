@@ -10,6 +10,10 @@ function Navbar(props) {
     //     loggedIn
     // } = props
 
+    const [dropdown, setDropdown] = useState({
+        isVisible: false
+    })
+
     const {
         claimedJobs
     } = useContext(StaffContext)
@@ -38,26 +42,64 @@ function Navbar(props) {
     }, [claimedJobs])
     
 
+    function handleChange(e) {
+        const { name, value, type, checked } = e.target
+        setDropdown(prevState => {
+            return {
+                ...prevState,
+                [name]: type === 'checkbox' ? checked : value
+            }
+        })
+    }
+    console.log(dropdown)
     return (
-        <div className="Navbar dropdown">
-            <nav className="dropdown-content">
-                <ul>
-                    { isStaff && <Link to='/staff/profile'>Staff</Link> }
-                    <Link to={'/profile'}>
-                    {
-                        pendingJobs.length > 0 &&
-                                <span className="badge">
-                                    {pendingJobs.length}
-                                </span>
-                    }
-                        Profile
-                    </Link>
+        <div className="Navbar ">
+            <div className="Navbar--header">
+                <h1 style={{backgroundColor: "white"}}>J.S.O.T</h1>
+                <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+                <input 
+                    type="checkbox"
+                    name="isVisible" 
+                    id="side-menu"
+                    checked={dropdown.isVisible}
+                    onChange={handleChange}
+                    className="side-menu"
+                />
+            </div>
+            {
+                dropdown.isVisible && 
+                <ul className="Navbar--dropdown">
+                    <li>
+                        { 
+                        isStaff && <Link to='/staff/profile'>Staff</Link> 
+                        }
+                    </li>
+                    <li>
+                        <Link to={'/profile'}>
+                        {
+                            pendingJobs.length > 0 &&
+                                    <span className="badge">
+                                        {pendingJobs.length}
+                                    </span>
+                        }
+                            Profile
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/jobsmain'>Jobs</Link>
+                    </li>
                     {/* { isStaff && <Link to='/profile'>Post</Link> } */}
-                    <Link to='/jobsmain'>Jobs</Link>
-                    { isManager  && <Link to='/management/addStaff'>Add Staff</Link> }
-                    <button onClick={() => logout()}>Logout</button>
+                    { 
+                        isManager  && 
+                        <li>
+                            <Link to='/management/addStaff'>Add Staff</Link> 
+                        </li>
+                    }
+                    <li>
+                        <button onClick={() => logout()}>Logout</button>
+                    </li>
                 </ul>
-            </nav>
+            }
         </div>
 
         // <div className="Navbar dropdown">

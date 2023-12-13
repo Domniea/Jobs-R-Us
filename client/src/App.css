@@ -5,7 +5,9 @@
 * {
   box-sizing: border-box;
   font-family:Georgia, 'Times New Roman', Times, serif;
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -28,11 +30,7 @@ form {
   border: 1px solid grey;
   border-radius: .5rem;
 }
-nav {
-  display: flex;
-  justify-content: space-evenly;
 
-}
 nav > a {
   color: #a5a58d;
 }
@@ -44,8 +42,12 @@ input, button {
  border: none;
 }
 
-a {
-  text-decoration: none;
+a{
+    text-decoration: none;
+}
+
+ul{
+  list-style: none;
 }
 
 .WelcomeHeader {
@@ -88,9 +90,69 @@ a {
 
 .Navbar {
   font-size: 1.75rem;
-  padding: 2rem;
-  background-color: #0F0F0F;
-  border-radius: 1rem;
+  /* padding: 1rem; */
+  background-color: black;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.hamb{
+  cursor: pointer;
+  float: right;
+  padding: 40px 20px;
+}/* Style label tag */
+
+.hamb-line {
+  background: white;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 24px;
+
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after{
+  background: white;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.hamb-line::before{
+  top: 5px;
+}
+.hamb-line::after{
+  top: -5px;
+}
+
+.side-menu {
+  display: none;
+}
+
+.Navbar--header > h1 {
+  padding: 1rem;
+}
+
+.Navbar--header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.Navbar--dropdown {
+    width: auto;
+    height: auto;
+    padding: 2rem;
+    position: fixed;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* overflow: hidden; */
+
 }
 
 .UserList {

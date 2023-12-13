@@ -5,7 +5,6 @@ function JobStaffCompleted(props) {
         job, location, price
     } = props
 
-    console.log(props)
     return (
         <div className="staff--compleated">
             <h5>{job}</h5>
