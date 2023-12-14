@@ -15,10 +15,12 @@ function StaffProfile() {
 
     return (
         <div className="StaffProfile">
-            <h1>Welcome {username[0].toUpperCase() + username.slice(1)}</h1>
+            <header>
+                <h1>Welcome {username[0].toUpperCase() + username.slice(1)}</h1>
+            </header>
             <StaffListPending />
-            <JobListStaffCompleted/>
             <Payment />
+            <JobListStaffCompleted/>
         </div>
     )
 }

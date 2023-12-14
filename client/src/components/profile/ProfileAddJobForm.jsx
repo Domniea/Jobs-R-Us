@@ -20,7 +20,10 @@ const {
    _id,
     editing,
     toggle,
-    submit
+    submit,
+    input1,
+    input2,
+    input3
 } = props
 
 const initInputs = {
@@ -43,7 +46,6 @@ function handleSubmit(e) {
     e.preventDefault()
     submit(inputs, _id) 
     {editing && toggle()}
-    // { !editing && getUsersJobsPosted(_id) }
 }
 
     return(
@@ -56,6 +58,7 @@ function handleSubmit(e) {
                     id='job'
                     value={inputs.job}
                     onChange={handleChange}
+                    placeholder={input1}
                 />
                 <label htmlFor="location">Location</label>  
                 <input 
@@ -64,6 +67,7 @@ function handleSubmit(e) {
                     id='location'
                     value={inputs.location}
                     onChange={handleChange}
+                    placeholder={input2}
                 />
                 <label htmlFor="price">Price</label>
                 <input 
@@ -72,6 +76,7 @@ function handleSubmit(e) {
                     id='price'
                     value={inputs.price}
                     onChange={handleChange}
+                    placeholder={input3}
                 />
                     <button>Submit</button>
            </form>

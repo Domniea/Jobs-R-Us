@@ -27,9 +27,12 @@ const total = totalPay.reduce((acc, job) => {
 }, 0)
 
     return (
-        <div className="payment--container">
-            <h3>Total Earned</h3>
-            <h3>${total}</h3>
+        <div className="payment--container container">
+            <div>
+                <h3>Total Earned</h3>
+                <h3>${total}</h3>
+            </div>
+            <button>GET PAID!!!</button>
         </div>
     )
 }

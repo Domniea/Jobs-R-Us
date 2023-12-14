@@ -7,9 +7,21 @@ function JobStaffCompleted(props) {
 
     return (
         <div className="staff--completed">
-            <h5>{job}</h5>
-            <h6>{location}</h6>
-            <h6>{price}</h6>
+            <div className="left centered">
+                <h5>{job}</h5>
+            </div>
+            <div className="left-transition centered">
+                <h1>-</h1>
+            </div>
+            <div className="middle centered">
+                <h6>{location}</h6>
+            </div>
+            <div className="right-transition centered">
+                <h1>-</h1>
+            </div>
+            <div className="right centered">
+                <h6>{price}</h6>
+            </div>
         </div>
     )
 }

@@ -17,6 +17,7 @@ header {
   background-color: rgba(255, 255, 255, 0.69);
   padding: .25rem;
   border-radius: 2rem;
+  text-align: center;
 }
 
 
@@ -49,6 +50,7 @@ input {
  box-shadow: 1px 1px 1px 1px grey;
  border-radius: 5px;
  border: none;
+ text-align: center;
 }
 
 button {
@@ -67,6 +69,13 @@ ul {
   list-style: none;
 }
 
+.container {
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px 10px rgba(84, 84, 84, 0.25);
+  background-color: rgba(255, 255, 255, 0.69);
+  border-radius: .5rem;
+}
 /* Landing Page */
 
 .WelcomeHeader {
@@ -180,13 +189,7 @@ ul {
 }
 
 /*Profile View*/
-.profile--postedList, .profile--completedList{
-  margin: 1rem;
-  padding: 1rem;
-  box-shadow: 0px 0px 10px 10px rgba(84, 84, 84, 0.25);
-  background-color: rgba(255, 255, 255, 0.69);
-  border-radius: .5rem;
-}
+
 .profile--postedList h2 {
   text-align: center;
 }
@@ -200,7 +203,14 @@ ul {
   text-align: center;
 }
 
-.profile--form {
+.profile-postedJob {
+display: flex;
+justify-content: space-between;
+}
+
+.spacer {
+  margin: 1rem;
+  padding: 1rem;
 
 }
 
@@ -262,6 +272,77 @@ ul {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+/* Staff Profile */
+
+.staff--pendingList h2 {
+text-align: center;
+}
+
+.staff--pendingJob {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.staff--pendingList {
+  max-height: 45vh;
+  overflow: scroll;
+}
+
+.staff--listCompleted {
+  max-height: 30vh;
+  overflow: scroll;
+}
+
+.staff--listCompleted h2 {
+  text-align: center;
+}
+
+.staff--completed {
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-top: 2px solid rgb(255, 255, 255);
+
+  padding: 1rem;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  grid-column: 1 / 2;
+}
+
+.left-transition {
+  grid-column: 2 / 3;
+}
+
+
+.middle {
+  grid-column: 3 / 4;
+}
+
+.right-transition {
+  grid-column: 4 / 5;
+}
+
+.right {
+  grid-column: 5 / 6;
 }
 
 /* Staff Search */
