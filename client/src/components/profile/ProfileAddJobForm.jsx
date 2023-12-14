@@ -49,7 +49,6 @@ function handleSubmit(e) {
     return(
         <div className="profile--form">
             <form className="profile--addJobForm" onSubmit={handleSubmit}>
-              
                 <label htmlFor="job">Job</label>
                 <input 
                     type="text" 
@@ -58,8 +57,7 @@ function handleSubmit(e) {
                     value={inputs.job}
                     onChange={handleChange}
                 />
-            
-                <label htmlFor="location">Location</label>
+                <label htmlFor="location">Location</label>  
                 <input 
                     type="text" 
                     name='location'
@@ -67,7 +65,6 @@ function handleSubmit(e) {
                     value={inputs.location}
                     onChange={handleChange}
                 />
-            
                 <label htmlFor="price">Price</label>
                 <input 
                     type="text" 
@@ -76,8 +73,7 @@ function handleSubmit(e) {
                     value={inputs.price}
                     onChange={handleChange}
                 />
-                
-                <button>Submit</button>
+                    <button>Submit</button>
            </form>
         </div>
     )

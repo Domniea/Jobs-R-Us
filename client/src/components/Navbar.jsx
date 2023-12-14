@@ -58,7 +58,7 @@ function Navbar(props) {
     return (
         <div className="Navbar">
             <div className="Navbar--header">
-                <h3 style={{backgroundColor: "white"}}>J.S.O.T</h3>
+                <h3>J.S.O.T</h3>
                 <label className="hamb" htmlFor="side-menu"><span className="hamb-line"></span></label>
                 <input 
                     type="checkbox"

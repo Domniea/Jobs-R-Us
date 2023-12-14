@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: grey;
+  background-color: rgb(199, 199, 199);
   color: black;
 }
 
@@ -20,7 +20,12 @@ h1 {
   text-align: center;
 }
 
-form {
+a, a:visited, a:active {
+  color: inherit;
+  text-decoration: none;
+ }
+
+/* form {
   margin: 1rem;
   padding: .5rem;
   display: flex;
@@ -29,7 +34,7 @@ form {
   align-items: center;
   border: 1px solid grey;
   border-radius: .5rem;
-}
+} */
 
 nav > a {
   color: #a5a58d;
@@ -44,8 +49,10 @@ input {
 
 button {
   margin: .5rem;
-  padding: .25rem;
+  padding: .4rem;
   border-radius: .5rem;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0px 0px 10px 10px white;
 }
 
 a {
@@ -97,7 +104,7 @@ ul {
 .Navbar {
   font-size: 1.75rem;
   /* padding: 1rem; */
-  background-color: black;
+  background-color: rgba(255, 255, 255, 0.784);
   position: sticky;
   top: 0;
   width: 100%;
@@ -111,7 +118,7 @@ ul {
 }/* Style label tag */
 
 .hamb-line {
-  background: white;
+  background: rgb(0, 0, 0);
   display: block;
   height: 2px;
   position: relative;
@@ -121,7 +128,7 @@ ul {
 
 .hamb-line::before,
 .hamb-line::after{
-  background: white;
+  background: rgb(0, 0, 0);
   content: '';
   display: block;
   height: 100%;
@@ -141,6 +148,7 @@ ul {
 
 .Navbar--header > h3 {
   padding: .5rem;
+
 }
 
 .Navbar--header {
@@ -155,7 +163,7 @@ ul {
     height: auto;
     padding: 2rem;
     position: absolute;
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.784);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -166,9 +174,10 @@ ul {
 
 /*Profile View*/
 .profile--postedList, .profile--completedList{
-  background-color: white;
   margin: 1rem;
   padding: 1rem;
+  box-shadow: 0px 0px 10px 10px rgba(84, 84, 84, 0.25);
+  background-color: rgba(255, 255, 255, 0.69);
   border-radius: .5rem;
 }
 .profile--postedList h2 {
@@ -178,8 +187,45 @@ ul {
   margin: 1rem;
   padding: 1rem;
   border-radius: .5rem;
-  background-color: white;
+  box-shadow: 0px 0px 10px 10px rgb(84, 84, 84);
+  color: white;
   text-align: center;
+}
+
+.profile--form {
+
+}
+
+.profile--addJobForm {
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px 10px rgba(84, 84, 84, 0.25);
+  background-color: rgba(255, 255, 255, 0.659);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: .5rem;
+
+}
+.form--fullContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+.form-labelContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form--inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* Jobs View */
@@ -236,6 +282,6 @@ background-color: #93B1A6 ;
   color: white
 }
 
-.profile--addJobForm {
+/* .profile--addJobForm {
   background-color: white;
-}
+} */
