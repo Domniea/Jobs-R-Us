@@ -37,7 +37,7 @@ function JobList(props) {
     })
 
     return (
-        <div className="JobList jobList">
+        <div className="availableJobList">
             {job}
         </div>
     )

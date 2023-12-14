@@ -13,35 +13,12 @@ function StaffProfile() {
         }
     } = useContext(UserContext)
 
-    // const {
-    //     getClaimed,
-    //     claimedJobs,
-    //     setClaimedJobs
-    // } = useContext(StaffContext)
-    
-    // useEffect(() => {
-    //     getClaimed(_id)
-    // }, [])
-    
-    // const job = claimedJobs.map(j => {
-    //     return <StaffJobPending
-    //         key={j._id}
-    //         {...j}
-    //         userId={_id}
-    //     />
-    //     }
-    // )
-
-    // console.log(claimedJobs)
     return (
-        <div>
+        <div className="StaffProfile">
             <h1>Welcome {username[0].toUpperCase() + username.slice(1)}</h1>
             <StaffListPending />
-            {/* {job} */}
-            <div className="staffCompleted--container container-complete-payment">
-                <JobListStaffCompleted/>
-                <Payment />
-            </div>
+            <JobListStaffCompleted/>
+            <Payment />
         </div>
     )
 }

@@ -17,7 +17,7 @@ function JobListUserPosted(props) {
     })
 
     return (
-        <div className="jobList">
+        <div className="profile--postedList">
             <h2>Posted Jobs</h2>
             { job }
         </div>

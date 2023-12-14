@@ -32,7 +32,7 @@ function StaffListPending() {
         }
     )
     return (
-        <div className="StaffListPending">
+        <div className="Staff--pendingList">
             <h2>Pending List</h2>
             {job}
         </div>

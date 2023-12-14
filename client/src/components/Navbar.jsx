@@ -51,29 +51,33 @@ function Navbar(props) {
             }
         })
     }
-    console.log(dropdown)
+    
+    function navClose() {
+        setDropdown({isVisible: false})
+    }
     return (
-        <div className="Navbar ">
+        <div className="Navbar">
             <div className="Navbar--header">
                 <h1 style={{backgroundColor: "white"}}>J.S.O.T</h1>
-                <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+                <label className="hamb" htmlFor="side-menu"><span className="hamb-line"></span></label>
                 <input 
                     type="checkbox"
                     name="isVisible" 
                     id="side-menu"
                     checked={dropdown.isVisible}
                     onChange={handleChange}
-                    className="side-menu"
+                    className="side-menu "
                 />
             </div>
             {
                 dropdown.isVisible && 
-                <ul className="Navbar--dropdown">
-                    <li>
-                        { 
-                        isStaff && <Link to='/staff/profile'>Staff</Link> 
-                        }
-                    </li>
+                <ul className="Navbar--dropdown" onClick={navClose}>
+                    { 
+                     isStaff &&
+                        <li>
+                            <Link to='/staff/profile' >Staff</Link> 
+                        </li>
+                    }
                     <li>
                         <Link to={'/profile'}>
                         {
@@ -88,7 +92,6 @@ function Navbar(props) {
                     <li>
                         <Link to='/jobsmain'>Jobs</Link>
                     </li>
-                    {/* { isStaff && <Link to='/profile'>Post</Link> } */}
                     { 
                         isManager  && 
                         <li>

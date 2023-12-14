@@ -3,7 +3,7 @@ import JobListAll from "./JobListAll";
 
 function JobView() {
     return (
-        <div>
+        <div className="JobView">
             <h1>All Jobs</h1>
             <JobListAll />
         </div>

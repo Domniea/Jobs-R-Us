@@ -47,41 +47,35 @@ function handleSubmit(e) {
 }
 
     return(
-        <div>
-            <form onSubmit={handleSubmit} 
-                style={editing ? {border: 'none'} : {border: '1px solid black'}}
-                className="profile--addJob"
-            >
-                {/* <div> */}
-                    <label htmlFor="job">Job</label>
-                    <input 
-                        type="text" 
-                        name='job'
-                        id='job'
-                        value={inputs.job}
-                        onChange={handleChange}
-                    />
-                {/* </div> */}
-                {/* <div> */}
-                    <label htmlFor="location">Location</label>
-                    <input 
-                        type="text" 
-                        name='location'
-                        id='location'
-                        value={inputs.location}
-                        onChange={handleChange}
-                    />
-                {/* </div> */}
-                {/* <div> */}
-                    <label htmlFor="price">Price</label>
-                    <input 
-                        type="text" 
-                        name='price'
-                        id='price'
-                        value={inputs.price}
-                        onChange={handleChange}
-                    />
-                {/* </div> */}
+        <div className="profile--form">
+            <form className="profile--addJobForm" onSubmit={handleSubmit}>
+              
+                <label htmlFor="job">Job</label>
+                <input 
+                    type="text" 
+                    name='job'
+                    id='job'
+                    value={inputs.job}
+                    onChange={handleChange}
+                />
+            
+                <label htmlFor="location">Location</label>
+                <input 
+                    type="text" 
+                    name='location'
+                    id='location'
+                    value={inputs.location}
+                    onChange={handleChange}
+                />
+            
+                <label htmlFor="price">Price</label>
+                <input 
+                    type="text" 
+                    name='price'
+                    id='price'
+                    value={inputs.price}
+                    onChange={handleChange}
+                />
                 
                 <button>Submit</button>
            </form>

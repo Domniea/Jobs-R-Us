@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import EditJobForm from "./EditJobForm";
 import ProfileAddJobForm from './ProfileAddJobForm'
 import { JobContext } from "../../context/JobProvider";
 
@@ -27,7 +26,7 @@ function JobUserPost(props) {
 
     return(
         <div>
-            <div className="job">
+            <div className="profile--postedJob">
                 {
                     isPending &&
                     <button

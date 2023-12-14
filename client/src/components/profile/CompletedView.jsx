@@ -12,7 +12,6 @@ function CompletedView() {
     
     return (
         <div>
-            <h1 className="bg-blue-500">completed</h1>
             <JobListUserCompleted 
                 _id={_id}
             />
