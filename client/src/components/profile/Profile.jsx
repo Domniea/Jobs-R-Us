@@ -28,8 +28,15 @@ function Profile() {
 
     return (
         <div className="Profile">
-            { !isStaff && <h1>Welcome {username[0].toUpperCase() + username.slice(1)}</h1>}
-            { isStaff && <h1>Post A Job</h1>}
+           <header>
+                { 
+                    isStaff ? 
+                    <h1>Post A Job</h1> 
+                    : 
+                    <h1>Welcome {username[0].toUpperCase() + username.slice(1)}</h1>
+                }
+           </header>
+           
             <ProfileAddJobForm 
                 submit={postJob}
                 _id= {_id}

@@ -58,7 +58,7 @@ function Navbar(props) {
     return (
         <div className="Navbar">
             <div className="Navbar--header">
-                <h1 style={{backgroundColor: "white"}}>J.S.O.T</h1>
+                <h3 style={{backgroundColor: "white"}}>J.S.O.T</h3>
                 <label className="hamb" htmlFor="side-menu"><span className="hamb-line"></span></label>
                 <input 
                     type="checkbox"
@@ -80,13 +80,13 @@ function Navbar(props) {
                     }
                     <li>
                         <Link to={'/profile'}>
+                            Profile
                         {
                             pendingJobs.length > 0 &&
                                     <span className="badge">
                                         {pendingJobs.length}
                                     </span>
                         }
-                            Profile
                         </Link>
                     </li>
                     <li>

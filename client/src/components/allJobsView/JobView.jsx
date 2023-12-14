@@ -4,7 +4,9 @@ import JobListAll from "./JobListAll";
 function JobView() {
     return (
         <div className="JobView">
-            <h1>All Jobs</h1>
+            <header>
+                <h1>All Jobs</h1>
+            </header>
             <JobListAll />
         </div>
     )

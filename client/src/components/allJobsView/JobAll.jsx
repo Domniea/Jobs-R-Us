@@ -27,9 +27,20 @@ function Job(props) {
 
     return (
         <div className="availableJob" disabled={isPending} >
-            <h3>{job}</h3>
+            {/* <h3>{job}</h3>
             <h5>{location}</h5>
-            <h4>${price}</h4>
+            <h4>${price}</h4> */}
+            <ul>
+                <li>
+                    <h3>{job}</h3>
+                </li>
+                <li>
+                    <h5>{location}</h5>
+                </li>
+                <li>
+                    <h4>${price}</h4>
+                </li>
+            </ul>
             {
                 staff &&
                     <button
