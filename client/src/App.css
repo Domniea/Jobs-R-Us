@@ -46,11 +46,12 @@ nav > a {
 }
 
 input {
- margin: 1rem;
+ margin: .5rem;
+ padding: 0 1rem;
  box-shadow: 1px 1px 1px 1px grey;
  border-radius: 5px;
  border: none;
- text-align: center;
+ /* text-align: center; */
 }
 
 button {
@@ -76,6 +77,12 @@ ul {
   background-color: rgba(255, 255, 255, 0.69);
   border-radius: .5rem;
 }
+
+.spacer {
+  margin: 1rem;
+  padding: 1rem;
+}
+
 /* Landing Page */
 
 .WelcomeHeader {
@@ -89,6 +96,10 @@ ul {
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+.AuthForm {
+  
 }
 
 .Auth--container {
@@ -208,12 +219,6 @@ display: flex;
 justify-content: space-between;
 }
 
-.spacer {
-  margin: 1rem;
-  padding: 1rem;
-
-}
-
 .profile--addJobForm {
   margin: 1rem;
   padding: 1rem;
@@ -275,7 +280,6 @@ justify-content: space-between;
 }
 
 /* Staff Profile */
-
 .staff--pendingList h2 {
 text-align: center;
 }
@@ -346,26 +350,21 @@ text-align: center;
 }
 
 /* Staff Search */
-
 .UserList {
-  height: 75vh;
-  margin: 5rem;
-  padding: 3rem;
-  border: 1px solid grey;
-  border-radius: 1rem;
-  overflow: scroll;
-  background-color: white;
+
+
 }
 
 .staffSearch {
-  background-color: #2a705f;
-  color: white;
+  /* background-color: #2a705f; */
+  /* color: white; */
 }
 
 .User > form {
 display: flex;
-flex-direction: row;
-background-color: #93B1A6 ;
+justify-content: space-between;
+align-items: center;
+/* background-color: #07442d64 ; */
 }
 
 .click-link {
@@ -374,13 +373,14 @@ background-color: #93B1A6 ;
 }
 
 /* Notification Badge*/
+
 .badge {
   margin: .5rem;
-  padding: .75rem;
+  padding: .25rem;
   border: 1px solid black;
-  border-radius: 1rem;;
-  background-color: #5C8374;
-  color: white
+  border-radius: .5rem;;
+  background-color: #000000;
+  color: white;
 }
 
 /* .profile--addJobForm {

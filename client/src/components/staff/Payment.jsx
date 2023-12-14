@@ -32,7 +32,7 @@ const total = totalPay.reduce((acc, job) => {
                 <h3>Total Earned</h3>
                 <h3>${total}</h3>
             </div>
-            <button>GET PAID!!!</button>
+            <button onClick={() => alert('You Got Paid!!!!!')}>GET PAID!!!</button>
         </div>
     )
 }

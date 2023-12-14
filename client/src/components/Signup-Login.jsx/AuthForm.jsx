@@ -13,7 +13,7 @@ function AuthForm(props) {
 
 
     return (
-        <>
+        <div className="AuthForm spacer">
         <form onSubmit={handleSubmit}  >
             <div>
                 <label htmlFor="username">username</label>
@@ -37,7 +37,7 @@ function AuthForm(props) {
             </div>
             <button>{btnText}</button>
         </form>
-        </>
+        </div>
     )
 }
 

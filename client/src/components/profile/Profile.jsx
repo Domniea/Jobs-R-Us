@@ -40,9 +40,7 @@ function Profile() {
             <ProfileAddJobForm 
                 submit={postJob}
                 _id= {_id}
-                input1={'job'}
-                input2={'location'}
-                input3={'price'}
+                label={true}
             />
             <JobListUserPosted />
             <div className="link--completed" >

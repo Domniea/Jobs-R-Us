@@ -31,7 +31,7 @@ function User(props) {
     }
 
     return (
-        <div className="User">
+        <div className="User container">
             <h3>username: {username}</h3>
             <form onSubmit={handleSubmit} className="user--select"> 
                 <label htmlFor="isStaff">Staff?</label>

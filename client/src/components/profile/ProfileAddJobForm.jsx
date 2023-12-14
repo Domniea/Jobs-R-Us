@@ -21,6 +21,7 @@ const {
     editing,
     toggle,
     submit,
+    label,
     input1,
     input2,
     input3
@@ -46,12 +47,16 @@ function handleSubmit(e) {
     e.preventDefault()
     submit(inputs, _id) 
     {editing && toggle()}
+    setInputs(initInputs)
 }
 
     return(
         <div className="profile--form">
             <form className="profile--addJobForm" onSubmit={handleSubmit}>
-                <label htmlFor="job">Job</label>
+                {
+                    label &&
+                    <label htmlFor="job">Job</label>
+                }
                 <input 
                     type="text" 
                     name='job'
@@ -60,7 +65,10 @@ function handleSubmit(e) {
                     onChange={handleChange}
                     placeholder={input1}
                 />
-                <label htmlFor="location">Location</label>  
+                {
+                    label &&
+                    <label htmlFor="location">Location</label>  
+                }
                 <input 
                     type="text" 
                     name='location'
@@ -69,7 +77,10 @@ function handleSubmit(e) {
                     onChange={handleChange}
                     placeholder={input2}
                 />
-                <label htmlFor="price">Price</label>
+                {
+                     label &&
+                    <label htmlFor="price">Price</label>
+                }
                 <input 
                     type="text" 
                     name='price'
@@ -78,7 +89,7 @@ function handleSubmit(e) {
                     onChange={handleChange}
                     placeholder={input3}
                 />
-                    <button>Submit</button>
+                    <button onClick={() => alert('Submitted!')}>Submit</button>
            </form>
         </div>
     )
