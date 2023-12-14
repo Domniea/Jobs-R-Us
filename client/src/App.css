@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  margin: 2rem;
+  margin: 1rem;
 }
 
 
@@ -21,8 +21,8 @@ h1 {
 }
 
 form {
-  margin: 2rem;
-  padding: 1rem;
+  margin: 1rem;
+  padding: .5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,9 +101,10 @@ ul {
   position: sticky;
   top: 0;
   width: 100%;
+  max-height: 10vh;
 }
 
-.hamb{
+.hamb {
   cursor: pointer;
   float: right;
   padding: 40px 20px;
@@ -139,13 +140,14 @@ ul {
 }
 
 .Navbar--header > h3 {
-  padding: 1rem;
+  padding: .5rem;
 }
 
 .Navbar--header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  align-items: center;
+  padding: 0 1rem;
 }
 
 .Navbar--dropdown {
