@@ -139,7 +139,7 @@ ul{
 
 .Navbar--dropdown {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     padding: 2rem;
     position: sticky;
     background-color: black;
