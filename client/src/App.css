@@ -141,7 +141,7 @@ ul{
     width: 100vw;
     height: 100vh;
     padding: 2rem;
-    position: fixed;
+    position: sticky;
     background-color: black;
     display: flex;
     flex-direction: column;
