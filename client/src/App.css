@@ -11,6 +11,7 @@ body {
   background-size: cover;
   background-repeat: none;
   /* background-color: rgba(8, 0, 255, 0.751); */
+  background-color: black;
   color: rgb(0, 0, 0);
   width: 100vw;
   height: 100vh
@@ -386,6 +387,3 @@ align-items: center;
   color: white;
 }
 
-/* .profile--addJobForm {
-  background-color: white;
-} */
