@@ -42,40 +42,47 @@ function CreateUser() {
     }
 
     return (
-        <div className="CreateUser">
+        <div className="CreateUser container">
             <h1>Create User</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
-                <input 
-                    type="text" 
-                    name="username"
-                    id='username'
-                    value={username}
-                    onChange={handleChange}
-                    autoComplete="username"
-                />
-                <label htmlFor="username">Password</label>
-                <input 
-                    type="text" 
-                    name="password"
-                    id='password'
-                    value={password}
-                    onChange={handleChange}
-                />
-                <label htmlFor="email">Email</label>
-                <input 
-                    type="email" 
-                    name="email"
-                    id='email'
-                    value={email}
-                    onChange={handleChange}
-                    autoComplete="email"
-                />
+                <div className="leftTOright">
+                    <label htmlFor="username">Username</label>
+                    <input 
+                        type="text" 
+                        name="username"
+                        id='username'
+                        value={username}
+                        onChange={handleChange}
+                        autoComplete="username"
+                    />
+                </div>
+                <div className="leftTOright">
+                    <label htmlFor="username">Password</label>
+                    <input 
+                        type="text" 
+                        name="password"
+                        id='password'
+                        value={password}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="leftTOright">
+                    <label htmlFor="email">Email</label>
+                    <input 
+                        type="email" 
+                        name="email"
+                        id='email'
+                        value={email}
+                        onChange={handleChange}
+                        autoComplete="email"
+                    />
+                </div>
+                
                 <button>Submit</button>
-            </form>
             <button onClick={() => navigate('/')}>Back to Login </button>
                 <br></br>
                 <h2>{errMsg}</h2>
+            </form>
         </div>
     )
 }

@@ -13,10 +13,10 @@ function AuthForm(props) {
 
 
     return (
-        <div className="AuthForm spacer">
-        <form onSubmit={handleSubmit}  >
-            <div>
-                <label htmlFor="username">username</label>
+        <div className="AuthForm spacer container">
+        <form className="Auth--form"onSubmit={handleSubmit}  >
+            <div className="AuthFrom--inputs">
+                <label htmlFor="username">Username</label>
                 <input 
                     type="text"
                     name='username'
@@ -24,9 +24,7 @@ function AuthForm(props) {
                     value={username}
                     onChange={handleChange}
                 />
-            </div>
-            <div>
-                <label htmlFor="password">password</label>
+                <label htmlFor="password">Password</label>
                 <input 
                     type="password"
                     name='password'
@@ -36,6 +34,7 @@ function AuthForm(props) {
                 />
             </div>
             <button>{btnText}</button>
+            
         </form>
         </div>
     )

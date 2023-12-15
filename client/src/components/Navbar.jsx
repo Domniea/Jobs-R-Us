@@ -6,10 +6,6 @@ import { Link } from 'react-router-dom'
 
 
 function Navbar(props) {
-    // const {
-    //     loggedIn
-    // } = props
-
     const [dropdown, setDropdown] = useState({
         isVisible: false
     })

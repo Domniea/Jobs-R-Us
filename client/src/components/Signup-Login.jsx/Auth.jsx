@@ -42,16 +42,17 @@ function Auth() {
                     handleSubmit={handleLogin}
                     btnText='Log In!'
                 />
-                <Link to='/createuser'>Create New Account</Link>
+                <Link style={{color: "white", fontSize: "2rem"}}to='/createuser'>Create New Account</Link>
                 { errMsg && <h1 className='errorMsg'>{errMsg}</h1> }
                 
             </div>  
 
-            <div className='test-instructions'>
+            <div className='test-instructions container'>
                 <h2>
                     - For testing purposes ADMIN credentials are listed below 
                     to allow users to login as Managment. 
                 </h2>
+                <br />
                 <h3>
                     <ul>
                             <li>Username: "boss"</li>
@@ -59,6 +60,7 @@ function Auth() {
                     </ul>
 
                 </h3>
+                <br />
                 <h4>
                     * While logged in as ADMIN(Managment), Users can search their profiles(or a secondary test profile)
                     via email, and convert their profile to a "Staff" profile,
