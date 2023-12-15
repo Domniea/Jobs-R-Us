@@ -48,10 +48,10 @@ function Auth() {
             </div>  
 
             <div className='test-instructions container'>
-                <h2>
-                    - For testing purposes ADMIN credentials are listed below 
+                <h4>
+                    *For testing purposes ADMIN credentials are listed below 
                     to allow users to login as Managment. 
-                </h2>
+                </h4>
                 <br />
                 <h3>
                     <ul>

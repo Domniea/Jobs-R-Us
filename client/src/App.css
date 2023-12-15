@@ -32,17 +32,6 @@ a, a:visited, a:active {
   text-decoration: none;
  }
 
-/* form {
-  margin: 1rem;
-  padding: .5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid grey;
-  border-radius: .5rem;
-} */
-
 nav > a {
   color: #a5a58d;
 }
@@ -53,7 +42,7 @@ input {
  box-shadow: 1px 1px 1px 1px grey;
  border-radius: 5px;
  border: none;
- /* text-align: center; */
+
 }
 
 button {
@@ -120,7 +109,6 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
   color :black
 }
 
