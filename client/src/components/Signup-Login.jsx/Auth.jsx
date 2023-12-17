@@ -35,6 +35,11 @@ function Auth() {
 
     return (
         <div className='Auth'>
+            <div className="wwlcome--header container">
+                <header>
+                    <h1>The Job Search Of Tomorrow!</h1>           
+                </header>
+            </div>
             <div className='Auth--container'>
                 <AuthForm 
                     inputs={inputs}

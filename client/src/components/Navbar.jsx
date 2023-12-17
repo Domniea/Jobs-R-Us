@@ -8,24 +8,25 @@ import { Link } from 'react-router-dom'
 function Navbar(props) {
    
 
-// const [isMobile, setIsMobile] = useState(false)
+const [isMobile, setIsMobile] = useState(false)
  
-// //choose the screen size 
-// const handleResize = () => {
-//   if (window.innerWidth < 720) {
-//       setIsMobile(true)
-//   } else {
-//       setIsMobile(false)
-//   }
-// }
+//choose the screen size 
+const handleResize = () => {
+  if (window.innerWidth < 720) {
+      setIsMobile(true)
+  } else {
+      setIsMobile(false)
+  }
+}
 
-// // create an event listener
-// useEffect(() => {
-//   window.addEventListener("resize", handleResize)
-// })
+// create an event listener
+useEffect(() => {
+  window.addEventListener("resize", handleResize)
+})
 
 const [dropdown, setDropdown] = useState( 
     screen.width < 1000 & screen.height < 935 ? {isVisible: false} : {isVisible: true} 
+//    { isVisible: false }
   )
 
     const {
@@ -67,11 +68,14 @@ const [dropdown, setDropdown] = useState(
     }
     
     function navClose() {
-        setDropdown({isVisible: false})
+        if(isMobile) {
+            setDropdown({isVisible: false})
+
+        }
     }
     return (
-        <div className="Navbar">
-            <div className="Navbar--header">
+        <div className="Navbar" >
+            <div className="Navbar--header" >
                 <h3>J.S.O.T</h3>
                 <label className="hamb" htmlFor="side-menu"><span className="hamb-line"></span></label>
                 <input 
@@ -86,7 +90,7 @@ const [dropdown, setDropdown] = useState(
             </div>
             {
                 dropdown.isVisible && 
-                <ul className="Navbar--dropdown">
+                <ul className="Navbar--dropdown"  onClick={navClose}>
                     { 
                      isStaff &&
                         <li>
@@ -98,9 +102,9 @@ const [dropdown, setDropdown] = useState(
                             Profile
                         {
                             pendingJobs.length > 0 &&
-                                    <span className="badge">
+                                    <div style={{display: 'inline'}} className="badge">
                                         {pendingJobs.length}
-                                    </span>
+                                    </div>
                         }
                         </Link>
                     </li>
@@ -110,7 +114,7 @@ const [dropdown, setDropdown] = useState(
                     { 
                         isManager  && 
                         <li>
-                            <Link to='/management/addStaff'>Add Staff</Link> 
+                            <Link className="test" to='/management/addStaff'>Add {!isMobile && <br/>}Staff</Link> 
                         </li>
                     }
                     <li>

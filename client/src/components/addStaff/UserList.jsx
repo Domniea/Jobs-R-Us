@@ -45,7 +45,7 @@ function UserList() {
 
     return (
         <div className="UserList container">
-            <form onSubmit={handleSubmit} className="staffSearch container">
+            <form onSubmit={handleSubmit} className="staffSearch ">
                 <label htmlFor="searchEmail">Search By Email</label>
                 <input 
                     type="text"
