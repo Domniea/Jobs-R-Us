@@ -94,7 +94,7 @@ const [dropdown, setDropdown] = useState(
                     { 
                      isStaff &&
                         <li>
-                            <Link to='/staff/profile' >Staff</Link> 
+                            <Link to='/staff/profile'>Staff</Link> 
                         </li>
                     }
                     <li>
