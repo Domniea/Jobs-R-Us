@@ -26,9 +26,6 @@ function App() {
     }
   } = useContext(UserContext)
 
-
-
-  
   return (
    <div className='App'>
 
@@ -38,26 +35,28 @@ function App() {
       :
       <WelcomeHeader/>
     }
-      <Routes>
-        <Route path='/' element={<Auth/>} />
-        { !token && <Route path='/createuser' element={<CreateUser/>} />}
-        <Route path='/profile' element={<ProtectedRoute token={token} redirectTo={<Auth/>}>
-          <Profile/>
-        </ProtectedRoute>}/>
-        <Route path='/staff/profile' element={<StaffRoute token={token} isStaff={isStaff} redirectTo={<JobView/>}>
-          <StaffProfile/>
-        </StaffRoute>}/>
-        <Route path='/jobsmain' element={<ProtectedRoute token={token} redirectTo={<Auth/>}>
-          <JobView />
-        </ProtectedRoute>}/>
-        <Route path='/completed' element={<ProtectedRoute token={token} redirectTo={<Auth/>}>
-          <CompletedView />
-        </ProtectedRoute>}/>
-        <Route path='/management/addstaff' element={<StaffRoute token={token} isManager={isManager} isStaff={isStaff} redirectTo={<Profile/>}>
-          <StaffSearch/>
-        </StaffRoute>}/>
-        <Route path='*' element={<NotFound/>}/>
-      </Routes>
+      <div className='App-body'>
+        <Routes>
+          <Route path='/' element={<Auth/>} />
+          { !token && <Route path='/createuser' element={<CreateUser/>} />}
+          <Route path='/profile' element={<ProtectedRoute token={token} redirectTo={<Auth/>}>
+            <Profile/>
+          </ProtectedRoute>}/>
+          <Route path='/staff/profile' element={<StaffRoute token={token} isStaff={isStaff} redirectTo={<JobView/>}>
+            <StaffProfile/>
+          </StaffRoute>}/>
+          <Route path='/jobsmain' element={<ProtectedRoute token={token} redirectTo={<Auth/>}>
+            <JobView />
+          </ProtectedRoute>}/>
+          <Route path='/completed' element={<ProtectedRoute token={token} redirectTo={<Auth/>}>
+            <CompletedView />
+          </ProtectedRoute>}/>
+          <Route path='/management/addstaff' element={<StaffRoute token={token} isManager={isManager} isStaff={isStaff} redirectTo={<Profile/>}>
+            <StaffSearch/>
+          </StaffRoute>}/>
+          <Route path='*' element={<NotFound/>}/>
+        </Routes>
+      </div>
     </div>
   )
 }

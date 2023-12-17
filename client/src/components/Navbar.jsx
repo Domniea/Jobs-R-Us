@@ -6,9 +6,27 @@ import { Link } from 'react-router-dom'
 
 
 function Navbar(props) {
-    const [dropdown, setDropdown] = useState({
-        isVisible: false
-    })
+   
+
+// const [isMobile, setIsMobile] = useState(false)
+ 
+// //choose the screen size 
+// const handleResize = () => {
+//   if (window.innerWidth < 720) {
+//       setIsMobile(true)
+//   } else {
+//       setIsMobile(false)
+//   }
+// }
+
+// // create an event listener
+// useEffect(() => {
+//   window.addEventListener("resize", handleResize)
+// })
+
+const [dropdown, setDropdown] = useState( 
+    screen.width < 1000 & screen.height < 935 ? {isVisible: false} : {isVisible: true} 
+  )
 
     const {
         claimedJobs
@@ -63,11 +81,12 @@ function Navbar(props) {
                     checked={dropdown.isVisible}
                     onChange={handleChange}
                     className="side-menu "
+                    onClick={navClose}
                 />
             </div>
             {
                 dropdown.isVisible && 
-                <ul className="Navbar--dropdown" onClick={navClose}>
+                <ul className="Navbar--dropdown">
                     { 
                      isStaff &&
                         <li>
