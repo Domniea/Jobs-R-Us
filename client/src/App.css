@@ -447,8 +447,8 @@ align-items: center;
       padding: 2rem
     }
     
-    .container {
-    
+    button {
+      padding: 1rem 2rem;
     }
 
   }
